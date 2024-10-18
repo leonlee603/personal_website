@@ -27,7 +27,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
             src={urlFor(mainImage).width(400).height(400).url()}
             width={400}
             height={400}
-            alt=""
+            alt={mainImage?.alt ? mainImage?.alt: ""}
           />
         </figure>
       ) : null}
