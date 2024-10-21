@@ -16,6 +16,7 @@ import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
 
 export default defineConfig({
+  title: 'Leon Personal Website',
   basePath: '/studio',
   projectId,
   dataset,
