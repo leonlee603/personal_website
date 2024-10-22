@@ -76,5 +76,13 @@ export const blockContentType = defineType({
         },
       ],
     }),
+    defineArrayMember({
+      type: 'code',
+      title: 'Code Block',
+      options: {
+        language: 'javascript',
+        withFilename: true,
+      },
+    }),
   ],
 });
