@@ -1,13 +1,10 @@
-import { sanityFetch } from "@/sanity/lib/client";
-import { POSTS_QUERY } from "@/sanity/lib/queries";
-import { PostCard } from "@/components/PostCard";
-import { Title } from "@/components/Title";
+import { sanityFetch } from "@/sanity/lib/live";
+import { POSTS_QUERY } from '@/sanity/lib/queries'
+import { PostCard } from '@/components/PostCard'
+import { Title } from '@/components/Title'
 
 export default async function Page() {
-  const posts = await sanityFetch({
-    query: POSTS_QUERY,
-    tags: ["post", "author", "category"],
-  });
+  const {data: posts} = await sanityFetch({query: POSTS_QUERY});
 
   return (
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
@@ -18,5 +15,5 @@ export default async function Page() {
         ))}
       </div>
     </main>
-  );
+  )
 }

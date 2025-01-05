@@ -131,7 +131,9 @@ export type Post = {
     alt?: string;
     _type: "image";
     _key: string;
-  }>;
+  } | {
+    _key: string;
+  } & Code>;
 };
 
 export type Author = {
@@ -219,7 +221,9 @@ export type BlockContent = Array<{
   alt?: string;
   _type: "image";
   _key: string;
-}>;
+} | {
+  _key: string;
+} & Code>;
 
 export type SanityImageCrop = {
   _type: "sanity.imageCrop";
@@ -278,7 +282,15 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type Code = {
+  _type: "code";
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
+};
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Code;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -288,6 +300,8 @@ export type POSTS_QUERYResult = Array<{
   title: string | null;
   slug: Slug | null;
   body: Array<{
+    _key: string;
+  } & Code | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -361,6 +375,8 @@ export type POST_QUERYResult = {
   _id: string;
   title: string | null;
   body: Array<{
+    _key: string;
+  } & Code | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;

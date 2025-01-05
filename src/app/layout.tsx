@@ -1,10 +1,4 @@
-import type { Metadata } from 'next';
-import '@/app/globals.css';
-
-export const metadata: Metadata = {
-  title: 'Leon',
-  description: 'Personal Website',
-};
+import "@/app/globals.css";
 
 export default function RootLayout({
   children,
