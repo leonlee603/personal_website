@@ -294,7 +294,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
-// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc)[0...12]{  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc){  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
 export type POSTS_QUERYResult = Array<{
   _id: string;
   title: string | null;
@@ -439,13 +439,29 @@ export type POST_QUERYResult = {
     } | null;
   } | null;
 } | null;
+// Variable: CATEGORIES_QUERY
+// Query: *[_type == "category"] | order(title asc) {    title,    slug,    "postCount": count(*[_type == "post" && references(^._id)])}
+export type CATEGORIES_QUERYResult = Array<{
+  title: string | null;
+  slug: Slug | null;
+  postCount: number;
+}>;
+// Variable: POSTS_CATEGORY_QUERY
+// Query: *[_type == "post" && $slug in categories[]->slug.current] | order(publishedAt desc) {    title,    slug,    publishedAt,}
+export type POSTS_CATEGORY_QUERYResult = Array<{
+  title: string | null;
+  slug: Slug | null;
+  publishedAt: string | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc)[0...12]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
+    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
+    "*[_type == \"category\"] | order(title asc) {\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"post\" && references(^._id)])\n}": CATEGORIES_QUERYResult;
+    "*[_type == \"post\" && $slug in categories[]->slug.current] | order(publishedAt desc) {\n    title,\n    slug,\n    publishedAt,\n}": POSTS_CATEGORY_QUERYResult;
   }
 }
