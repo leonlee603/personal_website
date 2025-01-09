@@ -440,8 +440,9 @@ export type POST_QUERYResult = {
   } | null;
 } | null;
 // Variable: CATEGORIES_QUERY
-// Query: *[_type == "category"] | order(title asc) {    title,    slug,    "postCount": count(*[_type == "post" && references(^._id)])}
+// Query: *[_type == "category"] | order(title asc) {    _id,    title,    slug,    "postCount": count(*[_type == "post" && references(^._id)])}
 export type CATEGORIES_QUERYResult = Array<{
+  _id: string;
   title: string | null;
   slug: Slug | null;
   postCount: number;
@@ -461,7 +462,7 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
-    "*[_type == \"category\"] | order(title asc) {\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"post\" && references(^._id)])\n}": CATEGORIES_QUERYResult;
+    "*[_type == \"category\"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"post\" && references(^._id)])\n}": CATEGORIES_QUERYResult;
     "*[_type == \"post\" && $slug in categories[]->slug.current] | order(publishedAt desc) {\n    title,\n    slug,\n    publishedAt,\n}": POSTS_CATEGORY_QUERYResult;
   }
 }

@@ -14,7 +14,7 @@ export function Header() {
           <li>
             <Link
               className="hover:text-pink-500 transition-colors"
-              href="/posts"
+              href="/blog"
             >
               Blog
             </Link>

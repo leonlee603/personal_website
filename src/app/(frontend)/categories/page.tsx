@@ -1,23 +1,23 @@
+import { groupedCategories } from "@/sanity/lib/helper";
 import { sanityFetch } from "@/sanity/lib/live";
 import { CATEGORIES_QUERY } from "@/sanity/lib/queries";
-import { CATEGORIES_QUERYResult } from "@/sanity/types";
 import Link from "next/link";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
-// function to group all categories by first letter of its title
-function groupedCategories(categories: CATEGORIES_QUERYResult) {
-  return categories.reduce<Record<string, CATEGORIES_QUERYResult>>(
-    (acc, item) => {
-      const firstLetter = item.title!.charAt(0).toLowerCase(); // Get the first letter and convert to lowercase
-      if (!acc[firstLetter]) {
-        acc[firstLetter] = []; // Initialize an array for this letter if it doesn't exist
-      }
-      acc[firstLetter].push(item); // Push the current item into the respective group
-      return acc;
-    },
-    {}
-  );
-}
+// // function to group all categories by first letter of its title
+// function groupedCategories(categories: CATEGORIES_QUERYResult) {
+//   return categories.reduce<Record<string, CATEGORIES_QUERYResult>>(
+//     (acc, item) => {
+//       const firstLetter = item.title!.charAt(0).toLowerCase(); // Get the first letter and convert to lowercase
+//       if (!acc[firstLetter]) {
+//         acc[firstLetter] = []; // Initialize an array for this letter if it doesn't exist
+//       }
+//       acc[firstLetter].push(item); // Push the current item into the respective group
+//       return acc;
+//     },
+//     {}
+//   );
+// }
 
 export default async function Page() {
   const { data: categories } = await sanityFetch({ query: CATEGORIES_QUERY });
@@ -34,7 +34,7 @@ export default async function Page() {
               {value.map((category) => {
                 return (
                   <Link
-                    key={category.slug?.current ?? uuidv4()}
+                    key={category._id}
                     href={`/categories/${category.slug!.current}`}
                     // className="button small"
                     // activeClassName="active"

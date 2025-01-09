@@ -48,15 +48,16 @@ export const POST_QUERY =
   }
 }`);
 
-// get all categories and order by title
+// get all categories and order by title - categories index page
 export const CATEGORIES_QUERY = 
   defineQuery(`*[_type == "category"] | order(title asc) {
+    _id,
     title,
     slug,
     "postCount": count(*[_type == "post" && references(^._id)])
 }`);
 
-// get all post related to a category
+// get all post related to a category - category detail page
 export const POSTS_CATEGORY_QUERY = 
   defineQuery(`*[_type == "post" && $slug in categories[]->slug.current] | order(publishedAt desc) {
     title,
