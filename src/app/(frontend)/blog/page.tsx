@@ -3,13 +3,18 @@ import { CATEGORIES_QUERY, POSTS_QUERY } from "@/sanity/lib/queries";
 import { PostCard } from "@/components/PostCard";
 import { Title } from "@/components/Title";
 import Link from "next/link";
-// import { Categories } from "@/components/Categories";
 
-export default async function Page() {
+interface SearchParams {
+  [key: string]: string | string[] | undefined;
+}
+
+export default async function Page({ searchParams }: { searchParams: Promise<SearchParams> }) {
+  const params = await searchParams;
+  console.log(params);
   const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
   const { data: categories } = await sanityFetch({ query: CATEGORIES_QUERY });
-  console.log(categories);
-  console.log(posts);
+  // console.log(categories);
+  // console.log(posts);
 
   return (
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
@@ -25,7 +30,7 @@ export default async function Page() {
           return (
             <Link
               key={category._id}
-              href={`/blog/${category.slug!.current}`}
+              href={`/blog?category=${category.slug!.current}`}
             >
               <span className="bg-cyan-50 rounded-full px-2 py-1 leading-none whitespace-nowrap text-sm font-semibold text-cyan-700">
                 {category.title}
