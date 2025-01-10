@@ -1,5 +1,5 @@
 import { sanityFetch } from '@/sanity/lib/live';
-import { POSTS_CATEGORY_QUERY } from '@/sanity/lib/queries';
+import { POSTS_IN_CATEGORY_QUERY } from '@/sanity/lib/queries';
 // import { POST_QUERY } from '@/sanity/lib/queries'
 // import { Post } from '@/components/Post'
 import { notFound } from 'next/navigation';
@@ -7,10 +7,12 @@ import { notFound } from 'next/navigation';
 export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string }>;
 }) {
+  const data = await params;
+  console.log(data);
   const { data: post } = await sanityFetch({
-    query: POSTS_CATEGORY_QUERY,
+    query: POSTS_IN_CATEGORY_QUERY,
     params: await params,
   });
   console.log(post);
