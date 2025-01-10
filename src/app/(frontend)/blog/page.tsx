@@ -3,7 +3,6 @@ import { CATEGORIES_QUERY, POSTS_IN_CATEGORY_RANGE_QUERY, POSTS_COUNT, POSTS_IN_
 import { PostCard } from "@/components/PostCard";
 import { Title } from "@/components/Title";
 import Link from "next/link";
-// import { GetServerSideProps } from "next";
 
 interface SearchParams {
   [key: string]: string | string[] | undefined;
@@ -17,7 +16,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<Sea
   const start = (currentPage - 1) * postsPerPage;
   const end = start + postsPerPage;
   const {data: totalPosts} = params.category ? await sanityFetch({ query: POSTS_IN_CATEGORY_COUNT, params: {category:params.category } }) : await sanityFetch({query:POSTS_COUNT});
-  console.log(totalPosts);
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
   // fetching data

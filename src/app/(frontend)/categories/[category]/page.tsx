@@ -1,7 +1,5 @@
 import { sanityFetch } from '@/sanity/lib/live';
 import { POSTS_IN_CATEGORY_QUERY } from '@/sanity/lib/queries';
-// import { POST_QUERY } from '@/sanity/lib/queries'
-// import { Post } from '@/components/Post'
 import { notFound } from 'next/navigation';
 
 export default async function Page({
