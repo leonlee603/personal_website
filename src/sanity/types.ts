@@ -300,8 +300,79 @@ export type POSTS_COUNTResult = number;
 // Query: count(*[_type == "post" && $category in categories[]->slug.current ])
 export type POSTS_IN_CATEGORY_COUNTResult = number;
 // Variable: POSTS_QUERY
-// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc){  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
 export type POSTS_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  categories: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
+// Variable: POSTS_RANGE_QUERY
+// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+export type POSTS_RANGE_QUERYResult = Array<{
   _id: string;
   title: string | null;
   slug: Slug | null;
@@ -453,9 +524,80 @@ export type CATEGORIES_QUERYResult = Array<{
   slug: Slug | null;
   postCount: number;
 }>;
-// Variable: POSTS_CATEGORY_QUERY
+// Variable: POSTS_IN_CATEGORY_QUERY
+// Query: *[_type == "post" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc) {    _id,    title,    slug,    body,    mainImage,    publishedAt,    "categories": coalesce(      categories[]->{        _id,        slug,        title      },      []    ),    author->{      name,      image    }}
+export type POSTS_IN_CATEGORY_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  categories: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
+// Variable: POSTS_IN_CATEGORY_RANGE_QUERY
 // Query: *[_type == "post" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc)[$start...$end] {    _id,    title,    slug,    body,    mainImage,    publishedAt,    "categories": coalesce(      categories[]->{        _id,        slug,        title      },      []    ),    author->{      name,      image    }}
-export type POSTS_CATEGORY_QUERYResult = Array<{
+export type POSTS_IN_CATEGORY_RANGE_QUERYResult = Array<{
   _id: string;
   title: string | null;
   slug: Slug | null;
@@ -531,10 +673,12 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "count(*[_type == \"post\"])": POSTS_COUNTResult;
     "count(*[_type == \"post\" && $category in categories[]->slug.current ])": POSTS_IN_CATEGORY_COUNTResult;
-    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
+    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
+    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_RANGE_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
     "*[_type == \"category\"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"post\" && references(^._id)])\n}": CATEGORIES_QUERYResult;
-    "*[_type == \"post\" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc)[$start...$end] {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"categories\": coalesce(\n      categories[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": POSTS_CATEGORY_QUERYResult;
+    "*[_type == \"post\" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"categories\": coalesce(\n      categories[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": POSTS_IN_CATEGORY_QUERYResult;
+    "*[_type == \"post\" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc)[$start...$end] {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"categories\": coalesce(\n      categories[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": POSTS_IN_CATEGORY_RANGE_QUERYResult;
   }
 }
