@@ -14,7 +14,9 @@ export default function BlogCategories({
         </span>
       </Link>
       {categories.map((category) => {
+        if (!category.postCount) return;
         return (
+          
           <Link
             key={category._id}
             href={`/blog?category=${category.slug!.current}`}
