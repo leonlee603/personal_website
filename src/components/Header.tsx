@@ -1,16 +1,16 @@
-import Link from 'next/link';
-import { ThemeToggleBtn } from './ModeToggleBtn';
-import { Button } from './ui/button';
+import Link from "next/link";
+import { ThemeToggleBtn } from "./ModeToggleBtn";
+import { Button } from "./ui/button";
 
 export function Header() {
   return (
-    <div className="from-pink-50 to-white  p-6">
-      <header className="flex items-center justify-between p-6 rounded-lg container mx-auto shadow-pink-50">
+    <header className="px-8 py-3">
+      <div className="container mx-auto flex max-w-1248 items-center justify-between">
         <Link className="font-bold tracking-tight" href="/">
           Leon
         </Link>
         <div className="flex flex-row gap-6">
-          <ul className="flex items-center gap-1 font-semibold text-slate-700">
+          <ul className="flex items-center gap-1 font-semibold">
             <li>
               <Button variant="ghost" asChild>
                 <Link className="" href="/blog">
@@ -28,7 +28,7 @@ export function Header() {
           </ul>
           <ThemeToggleBtn />
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }

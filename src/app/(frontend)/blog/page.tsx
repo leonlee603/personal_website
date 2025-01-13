@@ -13,7 +13,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<Sea
   // get ready for pagination
   const params = await searchParams;
   const currentPage = parseInt(params.page as string) || 1;
-  const postsPerPage = 3;
+  const postsPerPage = 12;
   const start = (currentPage - 1) * postsPerPage;
   const end = start + postsPerPage;
   const {data: totalPosts} = params.category ? await sanityFetch({ query: POSTS_IN_CATEGORY_COUNT, params: {category:params.category } }) : await sanityFetch({query:POSTS_COUNT});
@@ -24,23 +24,27 @@ export default async function Page({ searchParams }: { searchParams: Promise<Sea
   const { data: categories } = await sanityFetch({ query: CATEGORIES_QUERY });
 
   return (
-    <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-      <Title>Blog</Title>
-      <div>Personal articles about life, hobbies, photography, and everything else.</div>
-      <BlogCategories categories={categories} />
-      <div className="flex flex-col gap-24 py-12">
-        {posts.map((post) => (
-          <PostCard key={post._id} {...post} />
-        ))}
-      </div>
-      <div>
-          {currentPage > 1 && (
-            <Link href={params.category ? `?category=${params.category}&&page=${currentPage - 1}` : `?page=${currentPage - 1}`}>Previous</Link>
-          )}
-          
-          {currentPage < totalPages && (
-            <Link href={params.category ? `?category=${params.category}&&page=${currentPage + 1}` :`?page=${currentPage + 1}` }>Next</Link>
-          )}
+    <main className="px-8">
+      <div className="container mx-auto max-w-1248">
+        <div className="flex flex-col gap-3 py-12">
+          <Title>Blog</Title>
+          <div>Personal articles about life, hobbies, photography, and everything else.</div>
+        </div>
+        <BlogCategories currentCategory={params.category} categories={categories} />
+        <div className="grid grid-cols-4 gap-6 py-12">
+          {posts.map((post) => (
+            <PostCard key={post._id} {...post} />
+          ))}
+        </div>
+        <div>
+            {currentPage > 1 && (
+              <Link href={params.category ? `?category=${params.category}&&page=${currentPage - 1}` : `?page=${currentPage - 1}`}>Previous</Link>
+            )}
+            
+            {currentPage < totalPages && (
+              <Link href={params.category ? `?category=${params.category}&&page=${currentPage + 1}` :`?page=${currentPage + 1}` }>Next</Link>
+            )}
+        </div>
       </div>
     </main>
   );

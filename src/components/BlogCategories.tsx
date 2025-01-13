@@ -1,32 +1,38 @@
 import Link from "next/link";
 import type { CATEGORIES_QUERYResult } from "@/sanity/types";
+import FilterBadge from "./FilterBadge";
 
-export default function BlogCategories({
+export default async function BlogCategories({
+  currentCategory,
   categories,
 }: {
+  currentCategory: string | string[] | undefined,
   categories: CATEGORIES_QUERYResult;
 }) {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", columnGap: '1rem', rowGap: '1rem' }}>
-      <Link href={`/blog`}>
-        <span className="bg-cyan-50 rounded-full px-2 py-1 leading-none whitespace-nowrap text-sm font-semibold text-cyan-700">
-          All categories
-        </span>
-      </Link>
-      {categories.map((category) => {
-        if (!category.postCount) return;
-        return (
-          
-          <Link
-            key={category._id}
-            href={`/blog?category=${category.slug!.current}`}
-          >
-            <span className="bg-cyan-50 rounded-full px-2 py-1 leading-none whitespace-nowrap text-sm font-semibold text-cyan-700">
-              {category.title}
+    <div>
+      <div className="flex flex-row flex-wrap gap-1 pb-2">
+        <FilterBadge isActive={currentCategory === "" || currentCategory === undefined ? true : false}>
+          <Link href={`/blog`}>
+            <span className="whitespace-nowrap">
+              All
             </span>
           </Link>
-        );
-      })}
+        </FilterBadge>
+        {categories.map((category) => {
+          if (!category.postCount) return;
+          return (
+            <FilterBadge key={category._id} isActive={currentCategory === category.slug!.current}>
+              <Link href={`/blog?category=${category.slug!.current}`}>
+                <span className="whitespace-nowrap">
+                  {category.title}
+                </span>
+              </Link>
+            </FilterBadge>
+          );
+        })}
+      </div>
+      <hr />
     </div>
   );
 }
