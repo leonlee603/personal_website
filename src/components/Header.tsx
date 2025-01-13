@@ -13,8 +13,29 @@ export function Header() {
           <ul className="flex items-center gap-1 font-semibold">
             <li>
               <Button variant="ghost" asChild>
+                <Link className="" href="/">
+                  Me
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="ghost" asChild>
                 <Link className="" href="/blog">
                   Blog
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="ghost" asChild>
+                <Link className="" href="/notes">
+                  Notes
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="ghost" asChild>
+                <Link className="" href="/">
+                  Projects
                 </Link>
               </Button>
             </li>
