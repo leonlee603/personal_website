@@ -6,29 +6,36 @@ export default async function BlogCategories({
   currentCategory,
   categories,
 }: {
-  currentCategory: string | string[] | undefined,
+  currentCategory: string | string[] | undefined;
   categories: CATEGORIES_QUERYResult;
 }) {
   return (
     <div>
       <div className="flex flex-row flex-wrap gap-1 pb-2">
-        <FilterBadge isActive={currentCategory === "" || currentCategory === undefined ? true : false}>
-          <Link href={`/blog`}>
-            <span className="whitespace-nowrap">
-              All
-            </span>
-          </Link>
-        </FilterBadge>
+        <Link href={`/blog`}>
+          <FilterBadge
+            isActive={
+              currentCategory === "" || currentCategory === undefined
+                ? true
+                : false
+            }
+          >
+            <span className="whitespace-nowrap">All</span>
+          </FilterBadge>
+        </Link>
         {categories.map((category) => {
           if (!category.postCount) return;
           return (
-            <FilterBadge key={category._id} isActive={currentCategory === category.slug!.current}>
-              <Link href={`/blog?category=${category.slug!.current}`}>
-                <span className="whitespace-nowrap">
-                  {category.title}
-                </span>
-              </Link>
-            </FilterBadge>
+            <Link
+              key={category._id}
+              href={`/blog?category=${category.slug!.current}`}
+            >
+              <FilterBadge
+                isActive={currentCategory === category.slug!.current}
+              >
+                <span className="whitespace-nowrap">{category.title}</span>
+              </FilterBadge>
+            </Link>
           );
         })}
       </div>
