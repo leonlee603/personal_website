@@ -10,7 +10,7 @@ import { NoteCard } from "@/components/NoteCard";
 import PostPageHeader from "@/components/PostPageHeader";
 import { Title } from "@/components/Title";
 import NotesTopicsFilter from "@/components/NotesTopicsFilter";
-import { BlogPagination } from "@/components/BlogPagination";
+import { NotesPagination } from "@/components/NotesPagination";
 
 interface SearchParams {
   [key: string]: string | string[] | undefined;
@@ -24,7 +24,7 @@ export default async function Page({
   // get ready for pagination
   const params = await searchParams;
   const currentPage = parseInt(params.page as string) || 1;
-  const notesPerPage = 12;
+  const notesPerPage = 1;
   const start = (currentPage - 1) * notesPerPage;
   const end = start + notesPerPage;
   const { data: totalNotes } = params.topic
@@ -54,7 +54,7 @@ export default async function Page({
           </div>
         </PostPageHeader>
         <NotesTopicsFilter
-          currentTopic={params.category}
+          currentTopic={params.topic}
           topics={topics}
         />
         <div className="mb-24 mt-12">
@@ -63,7 +63,7 @@ export default async function Page({
               <NoteCard key={note._id} {...note} />
             ))}
           </div>
-          <BlogPagination
+          <NotesPagination
             currentPage={currentPage}
             totalPages={totalPages}
             params={params}
