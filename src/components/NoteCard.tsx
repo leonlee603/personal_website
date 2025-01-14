@@ -9,7 +9,7 @@ export function NoteCard(props: NOTES_QUERYResult[0]) {
   return (
     <Link className="" href={`/notes/${props.slug!.current}`}>
       <div className="flex flex-row justify-between gap-6 overflow-hidden border-b-2 border-dotted py-5">
-        <div className="max-w-70 text-lg">{title}</div>
+        <div className="max-w-70 text-lg font-semibold leading-none tracking-tight">{title}</div>
         <div className="flex flex-row items-center gap-4">
           <div className="flex flex-wrap items-center gap-2">
             <Categories categories={topics} />

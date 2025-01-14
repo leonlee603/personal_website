@@ -18,7 +18,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
 
   return (
     <Link className="flex flex-col" href={`/blog/${props.slug!.current}`}>
-      <Card className="flex flex-1 flex-col overflow-hidden">
+      <Card className="flex flex-1 flex-col overflow-hidden shadow-none">
         <CardHeader className="p-0">
           {mainImage ? (
             <Image
