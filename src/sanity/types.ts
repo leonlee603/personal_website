@@ -745,6 +745,379 @@ export type POSTS_IN_CATEGORY_RANGE_QUERYResult = Array<{
     } | null;
   } | null;
 }>;
+// Variable: NOTES_COUNT
+// Query: count(*[_type == "note"])
+export type NOTES_COUNTResult = number;
+// Variable: NOTES_IN_TOPIC_COUNT
+// Query: count(*[_type == "note" && $topic in topics[]->slug.current ])
+export type NOTES_IN_TOPIC_COUNTResult = number;
+// Variable: NOTES_QUERY
+// Query: *[_type == "note" && defined(slug.current)]|order(publishedAt desc){  _id,  title,  slug,  body,  mainImage,  publishedAt,  "topics": coalesce(    topics[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+export type NOTES_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  topics: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
+// Variable: NOTES_RANGE_QUERY
+// Query: *[_type == "note" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{  _id,  title,  slug,  body,  mainImage,  publishedAt,  "topics": coalesce(    topics[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+export type NOTES_RANGE_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  topics: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
+// Variable: NOTES_SLUGS_QUERY
+// Query: *[_type == "note" && defined(slug.current)]{   "slug": slug.current}
+export type NOTES_SLUGS_QUERYResult = Array<{
+  slug: string | null;
+}>;
+// Variable: NOTE_QUERY
+// Query: *[_type == "note" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  publishedAt,  "topics": coalesce(    topics[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+export type NOTE_QUERYResult = {
+  _id: string;
+  title: string | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  topics: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+} | null;
+// Variable: TOPICS_QUERY
+// Query: *[_type == "topic"] | order(title asc) {    _id,    title,    slug,    "postCount": count(*[_type == "note" && references(^._id)])}
+export type TOPICS_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  postCount: number;
+}>;
+// Variable: NOTES_IN_TOPIC_QUERY
+// Query: *[_type == "note" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc) {    _id,    title,    slug,    body,    mainImage,    publishedAt,    "topics": coalesce(      topics[]->{        _id,        slug,        title      },      []    ),    author->{      name,      image    }}
+export type NOTES_IN_TOPIC_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  topics: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
+// Variable: NOTES_IN_TOPIC_RANGE_QUERY
+// Query: *[_type == "note" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc)[$start...$end] {    _id,    title,    slug,    body,    mainImage,    publishedAt,    "topics": coalesce(      topics[]->{        _id,        slug,        title      },      []    ),    author->{      name,      image    }}
+export type NOTES_IN_TOPIC_RANGE_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  topics: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -759,5 +1132,14 @@ declare module "@sanity/client" {
     "*[_type == \"category\"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"post\" && references(^._id)])\n}": CATEGORIES_QUERYResult;
     "*[_type == \"post\" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"categories\": coalesce(\n      categories[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": POSTS_IN_CATEGORY_QUERYResult;
     "*[_type == \"post\" && defined(slug.current) && $category in categories[]->slug.current] | order(publishedAt desc)[$start...$end] {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"categories\": coalesce(\n      categories[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": POSTS_IN_CATEGORY_RANGE_QUERYResult;
+    "count(*[_type == \"note\"])": NOTES_COUNTResult;
+    "count(*[_type == \"note\" && $topic in topics[]->slug.current ])": NOTES_IN_TOPIC_COUNTResult;
+    "*[_type == \"note\" && defined(slug.current)]|order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTES_QUERYResult;
+    "*[_type == \"note\" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTES_RANGE_QUERYResult;
+    "*[_type == \"note\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": NOTES_SLUGS_QUERYResult;
+    "*[_type == \"note\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTE_QUERYResult;
+    "*[_type == \"topic\"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"note\" && references(^._id)])\n}": TOPICS_QUERYResult;
+    "*[_type == \"note\" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"topics\": coalesce(\n      topics[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": NOTES_IN_TOPIC_QUERYResult;
+    "*[_type == \"note\" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc)[$start...$end] {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"topics\": coalesce(\n      topics[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": NOTES_IN_TOPIC_RANGE_QUERYResult;
   }
 }

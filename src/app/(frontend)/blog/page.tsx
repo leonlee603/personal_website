@@ -7,8 +7,9 @@ import {
   POSTS_RANGE_QUERY,
 } from "@/sanity/lib/queries";
 import { PostCard } from "@/components/PostCard";
+import PostPageHeader from "@/components/PostPageHeader";
 import { Title } from "@/components/Title";
-import BlogCategories from "@/components/BlogCategories";
+import BlogCategoriesFilter from "@/components/BlogCategoriesFilter";
 import { BlogPagination } from "@/components/BlogPagination";
 
 interface SearchParams {
@@ -46,14 +47,13 @@ export default async function Page({
   return (
     <main className="px-8">
       <div className="container mx-auto max-w-1248">
-        <div className="flex flex-col gap-3 py-12">
+        <PostPageHeader>
           <Title>Blog</Title>
           <div>
-            Personal articles about life, hobbies, photography, and everything
-            else.
+            Articles about personal life, hobbies, photography, and everything else.
           </div>
-        </div>
-        <BlogCategories
+        </PostPageHeader>
+        <BlogCategoriesFilter
           currentCategory={params.category}
           categories={categories}
         />

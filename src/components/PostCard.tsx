@@ -30,11 +30,11 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
           ) : null}
         </CardHeader>
         <CardContent className="flex flex-1 flex-col p-4 pb-2">
-          <PublishedAt publishedAt={publishedAt} />
+          <PublishedAt publishedAt={publishedAt} className="mb-2"/>
           <CardTitle className="mb-2 text-lg">{title}</CardTitle>
           <CardDescription className="flex-1">Card Description</CardDescription>
         </CardContent>
-        <CardFooter className="gap flex-wrap gap-2 p-4">
+        <CardFooter className="flex flex-wrap gap-2 p-4">
           <Categories categories={categories} />
         </CardFooter>
       </Card>

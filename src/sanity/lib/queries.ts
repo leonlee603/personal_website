@@ -131,3 +131,135 @@ export const POSTS_IN_CATEGORY_RANGE_QUERY =
       image
     }
 }`);
+
+export const NOTES_COUNT = defineQuery(`count(*[_type == "note"])`);
+
+export const NOTES_IN_TOPIC_COUNT = defineQuery(`count(*[_type == "note" && $topic in topics[]->slug.current ])`);
+
+// get all notes
+export const NOTES_QUERY =
+  defineQuery(`*[_type == "note" && defined(slug.current)]|order(publishedAt desc){
+  _id,
+  title,
+  slug,
+  body,
+  mainImage,
+  publishedAt,
+  "topics": coalesce(
+    topics[]->{
+      _id,
+      slug,
+      title
+    },
+    []
+  ),
+  author->{
+    name,
+    image
+  }
+}`);
+
+// get all notes within a page range
+export const NOTES_RANGE_QUERY =
+  defineQuery(`*[_type == "note" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{
+  _id,
+  title,
+  slug,
+  body,
+  mainImage,
+  publishedAt,
+  "topics": coalesce(
+    topics[]->{
+      _id,
+      slug,
+      title
+    },
+    []
+  ),
+  author->{
+    name,
+    image
+  }
+}`);
+
+export const NOTES_SLUGS_QUERY =
+  defineQuery(`*[_type == "note" && defined(slug.current)]{ 
+  "slug": slug.current
+}`);
+
+// get a note with specific slug
+export const NOTE_QUERY =
+  defineQuery(`*[_type == "note" && slug.current == $slug][0]{
+  _id,
+  title,
+  body,
+  mainImage,
+  publishedAt,
+  "topics": coalesce(
+    topics[]->{
+      _id,
+      slug,
+      title
+    },
+    []
+  ),
+  author->{
+    name,
+    image
+  }
+}`);
+
+// get all topics and order by title
+export const TOPICS_QUERY =
+  defineQuery(`*[_type == "topic"] | order(title asc) {
+    _id,
+    title,
+    slug,
+    "postCount": count(*[_type == "note" && references(^._id)])
+}`);
+
+// get all notes related to a specific topic
+export const NOTES_IN_TOPIC_QUERY =
+  defineQuery(`*[_type == "note" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    body,
+    mainImage,
+    publishedAt,
+    "topics": coalesce(
+      topics[]->{
+        _id,
+        slug,
+        title
+      },
+      []
+    ),
+    author->{
+      name,
+      image
+    }
+}`);
+
+// get all notes related to a specific topic within a page range
+export const NOTES_IN_TOPIC_RANGE_QUERY =
+  defineQuery(`*[_type == "note" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc)[$start...$end] {
+    _id,
+    title,
+    slug,
+    body,
+    mainImage,
+    publishedAt,
+    "topics": coalesce(
+      topics[]->{
+        _id,
+        slug,
+        title
+      },
+      []
+    ),
+    author->{
+      name,
+      image
+    }
+}`);

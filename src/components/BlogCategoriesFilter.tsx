@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { CATEGORIES_QUERYResult } from "@/sanity/types";
 import FilterBadge from "./FilterBadge";
 
-export default async function BlogCategories({
+export default async function BlogCategoriesFilter({
   currentCategory,
   categories,
 }: {
