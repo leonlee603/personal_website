@@ -385,7 +385,7 @@
     }
   },
   {
-    "name": "article",
+    "name": "note",
     "type": "document",
     "attributes": {
       "_id": {
@@ -398,7 +398,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "article"
+          "value": "note"
         }
       },
       "_createdAt": {
