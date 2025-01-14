@@ -10,7 +10,7 @@ export const components: PortableTextComponents = {
     image: (props) =>
       props.value ? (
         <Image
-          className="not-prose w-full h-auto"
+          className="not-prose h-auto w-full"
           src={urlFor(props.value)
             .width(600)
             .height(400)
@@ -43,7 +43,7 @@ export const components: PortableTextComponents = {
       };
       
       return (
-        <>
+        <div style={{fontSize: '0.875rem'}}>
           {filename && <div className="text-sm" style={customHighlighterFileNameStyle}>{filename}</div>}
           <SyntaxHighlighter
             language={language}
@@ -53,7 +53,7 @@ export const components: PortableTextComponents = {
           >
             {code}
           </SyntaxHighlighter>
-        </>
+        </div>
       );
     },
   },
