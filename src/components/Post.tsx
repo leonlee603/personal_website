@@ -57,7 +57,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
         <div style={{ width: "70%" }}>
           {body ? (
             <div
-              className="prose lg:prose-lg lg:col-span-7 lg:col-start-6"
+              className="prose text-foreground lg:prose-lg"
               style={{ maxWidth: "100%" }}
             >
               <PortableText value={body} components={components} />
