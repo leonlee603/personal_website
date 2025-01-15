@@ -15,7 +15,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
 
   return (
     <article className="flex flex-col gap-20">
-      <header className="flex flex-col gap-4 lg:col-span-12">
+      <header className="flex flex-col gap-4">
         <div className="inline-block">
           <Link href="/notes">
             <Button variant="link" className="p-0 text-foreground">
@@ -40,7 +40,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           </div>
           <div className="overflow-hidden rounded-md" style={{ width: "50%" }}>
             {mainImage ? (
-              <figure className="flex flex-col items-start gap-2 lg:col-span-4">
+              <figure className="flex flex-col items-start gap-2">
                 <Image
                   src={urlFor(mainImage).width(624).url()}
                   sizes="100vw"

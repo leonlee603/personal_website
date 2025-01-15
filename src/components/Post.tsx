@@ -1,4 +1,3 @@
-import { Author } from "@/components/Author";
 import { Categories } from "@/components/Categories";
 import { components } from "@/sanity/portableTextComponents";
 import { PortableText } from "next-sanity";
@@ -7,35 +6,65 @@ import { PublishedAt } from "@/components/PublishedAt";
 import { Title } from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 export function Post(props: NonNullable<POST_QUERYResult>) {
-  const { title, author, mainImage, body, publishedAt, categories } = props;
+  const { title, mainImage, body, publishedAt, categories } = props;
 
   return (
-    <article className="grid lg:grid-cols-12 gap-y-12">
-      <header className="lg:col-span-12 flex flex-col gap-4 items-start">
-        <div className="flex gap-4 items-center">
-          <Categories categories={categories} />
-          <PublishedAt publishedAt={publishedAt} />
+    <article className="flex flex-col gap-20">
+      <header className="flex flex-col gap-4">
+        <div className="inline-block">
+          <Link href="/blog">
+            <Button variant="link" className="p-0 text-foreground">
+              BLOG
+            </Button>
+          </Link>
+          &nbsp;/
         </div>
-        <Title>{title}</Title>
-        <Author author={author} />
+        <div className="flex flex-col">
+          <Title>{title}</Title>
+          <div className="mt-8 flex flex-col gap-4">
+            <div className="text-lg font-bold text-muted-foreground">
+              Topics
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <Categories categories={categories} />
+            </div>
+            <div className="flex flex-row text-xs text-muted-foreground">
+              Published on&nbsp;
+              <PublishedAt publishedAt={publishedAt} />
+            </div>
+          </div>
+        </div>
       </header>
-      {mainImage ? (
-        <figure className="lg:col-span-4 flex flex-col gap-2 items-start">
-          <Image
-            src={urlFor(mainImage).width(400).height(400).url()}
-            width={400}
-            height={400}
-            alt=""
-          />
-        </figure>
-      ) : null}
-      {body ? (
-        <div className="lg:col-span-7 lg:col-start-6 prose lg:prose-lg">
-          <PortableText value={body} components={components} />
+      <div className="gap- flex flex-row gap-11">
+        <div>
+          <div className="overflow-hidden rounded-md">
+            {mainImage ? (
+              <figure className="flex flex-col items-start gap-2 lg:col-span-4">
+                <Image
+                  src={urlFor(mainImage).width(400).height(400).url()}
+                  width={400}
+                  height={400}
+                  alt=""
+                />
+              </figure>
+            ) : null}
+          </div>
         </div>
-      ) : null}
+        <div style={{ width: "70%" }}>
+          {body ? (
+            <div
+              className="prose lg:prose-lg lg:col-span-7 lg:col-start-6"
+              style={{ maxWidth: "100%" }}
+            >
+              <PortableText value={body} components={components} />
+            </div>
+          ) : null}
+        </div>
+      </div>
     </article>
   );
 }
