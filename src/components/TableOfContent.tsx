@@ -65,7 +65,6 @@ export function RenderToc({
   elements: TreeNode[];
   level?: number;
 }) {
-  console.log(elements);
   return (
     <ul
       className={cn("space-y-2 text-sm font-semibold list-none", {

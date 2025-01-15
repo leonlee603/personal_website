@@ -13,21 +13,21 @@ export const components: PortableTextComponents = {
         lower: true,
         remove: /[.]/g,
       });
-      return <h2 id={slug}>{children}</h2>;
+      return <h2 id={slug} className="scroll-mt-24">{children}</h2>;
     },
     h3: ({ children, value }) => {
       const slug = slugify(toPlainText(value), {
         lower: true,
         remove: /[.]/g,
       });
-      return <h3 id={slug}>{children}</h3>;
+      return <h3 id={slug} className="scroll-mt-24">{children}</h3>;
     },
     h4: ({ children, value }) => {
       const slug = slugify(toPlainText(value), {
         lower: true,
         remove: /[.]/g,
       });
-      return <h4 id={slug}>{children}</h4>;
+      return <h4 id={slug} className="scroll-mt-24">{children}</h4>;
     },
   },
   types: {

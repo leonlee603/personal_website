@@ -7,13 +7,10 @@ export default async function Page({
 }: {
   params: Promise<{ category: string }>;
 }) {
-  const data = await params;
-  console.log(data);
   const { data: post } = await sanityFetch({
     query: POSTS_IN_CATEGORY_QUERY,
     params: await params,
   });
-  console.log(post);
 
   if (!post) {
     notFound();
