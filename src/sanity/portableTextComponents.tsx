@@ -1,11 +1,35 @@
 import Image from 'next/image';
-import { PortableTextComponents } from 'next-sanity';
+import { PortableTextComponents, toPlainText } from 'next-sanity';
 import { urlFor } from '@/sanity/lib/image';
 // libraries for code block component
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import slugify from 'slugify';
 
 export const components: PortableTextComponents = {
+  block: {
+    h2: ({ children, value }) => {
+      const slug = slugify(toPlainText(value), {
+        lower: true,
+        remove: /[.]/g,
+      });
+      return <h2 id={slug}>{children}</h2>;
+    },
+    h3: ({ children, value }) => {
+      const slug = slugify(toPlainText(value), {
+        lower: true,
+        remove: /[.]/g,
+      });
+      return <h3 id={slug}>{children}</h3>;
+    },
+    h4: ({ children, value }) => {
+      const slug = slugify(toPlainText(value), {
+        lower: true,
+        remove: /[.]/g,
+      });
+      return <h4 id={slug}>{children}</h4>;
+    },
+  },
   types: {
     image: (props) =>
       props.value ? (

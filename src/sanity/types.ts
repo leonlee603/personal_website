@@ -899,7 +899,7 @@ export type NOTES_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
 // Variable: NOTE_QUERY
-// Query: *[_type == "note" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  publishedAt,  "topics": coalesce(    topics[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }}
+// Query: *[_type == "note" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  publishedAt,  "topics": coalesce(    topics[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  },  "headings": body[length(style) == 2 && string::startsWith(style, "h")]}
 export type NOTE_QUERYResult = {
   _id: string;
   title: string | null;
@@ -967,6 +967,24 @@ export type NOTE_QUERYResult = {
       _type: "image";
     } | null;
   } | null;
+  headings: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
 } | null;
 // Variable: TOPICS_QUERY
 // Query: *[_type == "topic"] | order(title asc) {    _id,    title,    slug,    "postCount": count(*[_type == "note" && references(^._id)])}
@@ -1137,7 +1155,7 @@ declare module "@sanity/client" {
     "*[_type == \"note\" && defined(slug.current)]|order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTES_QUERYResult;
     "*[_type == \"note\" && defined(slug.current)]|order(publishedAt desc)[$start...$end]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTES_RANGE_QUERYResult;
     "*[_type == \"note\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": NOTES_SLUGS_QUERYResult;
-    "*[_type == \"note\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": NOTE_QUERYResult;
+    "*[_type == \"note\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"topics\": coalesce(\n    topics[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n  \"headings\": body[length(style) == 2 && string::startsWith(style, \"h\")]\n}": NOTE_QUERYResult;
     "*[_type == \"topic\"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    \"postCount\": count(*[_type == \"note\" && references(^._id)])\n}": TOPICS_QUERYResult;
     "*[_type == \"note\" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"topics\": coalesce(\n      topics[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": NOTES_IN_TOPIC_QUERYResult;
     "*[_type == \"note\" && defined(slug.current) && $topic in topics[]->slug.current] | order(publishedAt desc)[$start...$end] {\n    _id,\n    title,\n    slug,\n    body,\n    mainImage,\n    publishedAt,\n    \"topics\": coalesce(\n      topics[]->{\n        _id,\n        slug,\n        title\n      },\n      []\n    ),\n    author->{\n      name,\n      image\n    }\n}": NOTES_IN_TOPIC_RANGE_QUERYResult;

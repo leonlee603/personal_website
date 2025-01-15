@@ -8,12 +8,13 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Toc } from "./TableOfContent";
 
 export function Note(props: NonNullable<NOTE_QUERYResult>) {
-  const { title, mainImage, body, publishedAt, topics } = props;
+  const { title, mainImage, body, publishedAt, topics, headings } = props;
 
   return (
-    <article className="flex flex-col gap-14">
+    <article className="flex flex-col gap-20">
       <header className="flex flex-col gap-4 lg:col-span-12">
         <div className="inline-block">
           <Link href="/notes">
@@ -57,9 +58,15 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
       </header>
 
       {body ? (
-        <div className="prose lg:prose-lg lg:col-span-7 lg:col-start-6">
-          <div className="potable-text-container">
+        <div
+          className="prose flex flex-row text-foreground lg:prose-lg"
+          style={{ maxWidth: "unset" }}
+        >
+          <div className="potable-text-container" style={{ width: "70%" }}>
             <PortableText value={body} components={components} />
+          </div>
+          <div className="" style={{width: "30%"}}>
+            <Toc headings={headings} title="Table of Contents" />
           </div>
         </div>
       ) : null}

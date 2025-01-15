@@ -206,7 +206,8 @@ export const NOTE_QUERY =
   author->{
     name,
     image
-  }
+  },
+  "headings": body[length(style) == 2 && string::startsWith(style, "h")]
 }`);
 
 // get all topics and order by title

@@ -24,7 +24,7 @@ export default async function Page({
   // get ready for pagination
   const params = await searchParams;
   const currentPage = parseInt(params.page as string) || 1;
-  const notesPerPage = 1;
+  const notesPerPage = 12;
   const start = (currentPage - 1) * notesPerPage;
   const end = start + notesPerPage;
   const { data: totalNotes } = params.topic
