@@ -13,22 +13,27 @@ export const components: PortableTextComponents = {
         lower: true,
         remove: /[.]/g,
       });
-      return <h2 id={slug} className="scroll-mt-24">{children}</h2>;
+      return <h2 id={slug} className="scroll-mt-24 text-foreground">{children}</h2>;
     },
     h3: ({ children, value }) => {
       const slug = slugify(toPlainText(value), {
         lower: true,
         remove: /[.]/g,
       });
-      return <h3 id={slug} className="scroll-mt-24">{children}</h3>;
+      return <h3 id={slug} className="scroll-mt-24 text-foreground">{children}</h3>;
     },
     h4: ({ children, value }) => {
       const slug = slugify(toPlainText(value), {
         lower: true,
         remove: /[.]/g,
       });
-      return <h4 id={slug} className="scroll-mt-24">{children}</h4>;
+      return <h4 id={slug} className="scroll-mt-24 text-foreground">{children}</h4>;
     },
+  },
+  marks: {
+    em: ({children}) => <em className="text-foreground">{children}</em>,
+    strong: ({children}) => <strong className="text-foreground">{children}</strong>,
+    code: ({children}) => <code className="text-foreground">{children}</code>,
   },
   types: {
     image: (props) =>

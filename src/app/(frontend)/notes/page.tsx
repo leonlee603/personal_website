@@ -50,7 +50,7 @@ export default async function Page({
         <PostPageHeader>
           <Title>Notes</Title>
           <div>
-          Notes, references, and tutorials on programming, web development for myself.
+          Notes, references, and tutorials on programming, web development.
           </div>
         </PostPageHeader>
         <NotesTopicsFilter

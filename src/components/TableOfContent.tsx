@@ -82,7 +82,7 @@ export function RenderToc({
         >
           <Link
             href={`#${el.slug}`}
-            className="hover:underline hover:underline-offset-4"
+            className="text-foreground no-underline hover:underline hover:underline-offset-4"
           >
             {el.text}
           </Link>

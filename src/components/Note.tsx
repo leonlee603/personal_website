@@ -28,6 +28,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           <div className="flex flex-col pr-9" style={{ width: "50%" }}>
             <Title>{title}</Title>
             <div className="mt-8 flex flex-col gap-4">
+              <div className="text-lg font-bold text-muted-foreground">Topics</div>
               <div className="flex flex-row items-center gap-4">
                 <Categories categories={topics} />
               </div>
