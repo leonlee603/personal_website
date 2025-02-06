@@ -13,7 +13,7 @@ export function Header() {
           <ul className="flex items-center gap-1 font-semibold">
             <li>
               <Button variant="ghost" asChild>
-                <Link className="" href="/">
+                <Link className="" href="/me">
                   Me
                 </Link>
               </Button>
@@ -34,7 +34,7 @@ export function Header() {
             </li>
             <li>
               <Button variant="ghost" asChild>
-                <Link className="" href="/">
+                <Link className="" href="/projects">
                   Projects
                 </Link>
               </Button>
