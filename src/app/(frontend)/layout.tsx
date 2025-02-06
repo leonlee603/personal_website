@@ -1,6 +1,13 @@
 import { Header } from "@/components/Header";
 import { SanityLive } from "@/sanity/lib/live";
 
+export const metadata = {
+  title: {
+    template: "%s | Leon Lee",
+    default: "Leon Lee"
+  }
+};
+
 export default function FrontendLayout({
   children,
 }: Readonly<{

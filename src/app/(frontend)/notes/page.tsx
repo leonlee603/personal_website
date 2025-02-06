@@ -16,6 +16,10 @@ interface SearchParams {
   [key: string]: string | string[] | undefined;
 }
 
+export const metadata = {
+  title: "Notes"
+};
+
 export default async function Page({
   searchParams,
 }: {
