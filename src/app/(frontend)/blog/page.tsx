@@ -1,12 +1,9 @@
 import { Suspense } from "react";
+import { SearchParams } from "next/dist/server/request/search-params";
 
 import BlogContainer from "@/components/BlogContainer";
 import PostPageHeader from "@/components/PostPageHeader";
 import { Title } from "@/components/Title";
-
-interface SearchParams {
-  [key: string]: string | string[] | undefined;
-}
 
 export const metadata = {
   title: "Blog",
