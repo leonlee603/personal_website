@@ -1,8 +1,8 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from 'next'
 import { sanityFetch } from "@/sanity/lib/live";
-import { NOTE_QUERY } from "@/sanity/lib/queries";
+import { NOTE_QUERY, NOTES_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { Note } from "@/components/Note";
-import { notFound } from "next/navigation";
 
 export async function generateMetadata({params} : {params: Promise<{ slug: string }>}):Promise<Metadata> {
   const { data: post } = await sanityFetch({
@@ -15,11 +15,21 @@ export async function generateMetadata({params} : {params: Promise<{ slug: strin
   }
 }
 
+export async function generateStaticParams() {
+  const { data } = await sanityFetch({
+    query: NOTES_SLUGS_QUERY,
+    perspective: "published",
+    stega: false,
+  });
+  return data;
+}
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  // const { data: notes } = await sanityFetch({ query: NOTES_QUERY });console.log(notes);
   const { data: post } = await sanityFetch({
     query: NOTE_QUERY,
     params: await params,
