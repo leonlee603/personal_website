@@ -25,6 +25,20 @@ export const metadata = {
 //   return staticParamsArr;
 // }
 
+export async function generateStaticParams({ params }: { params: { topic: string } }) {
+  const { topic } = params;
+  const { data: totalNotes } = await sanityFetch({
+    query: NOTES_IN_TOPIC_COUNT,
+    params: { topic: topic },
+    perspective: "published",
+    stega: false,
+  });
+  const totalPages = Math.ceil(totalNotes / NOTES_PER_PAGE);
+  const numberArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const pageObjectArray = numberArray.map((num) => ({ page: `${num}` }));
+  return pageObjectArray;
+}
+
 export default async function Page({
   params,
 }: {
