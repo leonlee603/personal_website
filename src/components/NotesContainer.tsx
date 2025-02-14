@@ -14,7 +14,6 @@ export default function NotesContainer({
   if (!parsedCurrentPage || parsedCurrentPage <=0) {
     parsedCurrentPage = 1;
   }
-  const notesPerPage = NOTES_PER_PAGE;
 
   return (
     <>
@@ -23,14 +22,14 @@ export default function NotesContainer({
           <NotesList
             topic={topic}
             currentPage={parsedCurrentPage}
-            notesPerPage={notesPerPage}
+            notesPerPage={NOTES_PER_PAGE}
           />
         </Suspense>
         <Suspense>
           <NotesPagination
             topic={topic}
             currentPage={parsedCurrentPage}
-            notesPerPage={notesPerPage}
+            notesPerPage={NOTES_PER_PAGE}
           />
         </Suspense>
       </div>

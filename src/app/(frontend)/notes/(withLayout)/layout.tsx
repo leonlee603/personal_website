@@ -4,7 +4,6 @@ import NotesTopicsFilterContainer from "@/components/NotesTopicsFilterContainer"
 import PostPageHeader from "@/components/PostPageHeader";
 import Title from "@/components/Title";
 
-
 export const metadata = {
   title: {
     template: "%s | Leon Lee",

@@ -1,14 +1,18 @@
 // All note for a topic on specific page (other than page 1)
-
+import type { Metadata } from 'next'
 import { notFound, redirect } from "next/navigation";
 import { NOTES_PER_PAGE } from "@/lib/constant";
 import { sanityFetch } from "@/sanity/lib/live";
 import { NOTES_IN_TOPIC_COUNT } from "@/sanity/lib/queries";
 import NotesContainer from "@/components/NotesContainer";
 
-export const metadata = {
-  title: "Notes",
-};
+export async function generateMetadata({params} : {params: Promise<{ topic: string }>}):Promise<Metadata> {
+  const { topic } = await params;
+  
+  return {
+    title: topic.charAt(0).toUpperCase() + topic.slice(1),
+  }
+}
 
 // export async function generateStaticParams() {
 //   const { data: topics } = await sanityFetch({

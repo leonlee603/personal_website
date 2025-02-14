@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { TOPICS_QUERY } from "@/sanity/lib/queries";
 
-import NotesTopicsFilterNew from "./NotesTopicsFilterNew";
+import NotesTopicsFilter from "./NotesTopicsFilter";
 
 
 export default async function NotesTopicsFilterContainer() {
@@ -9,7 +9,7 @@ export default async function NotesTopicsFilterContainer() {
 
   return (
     <>
-      <NotesTopicsFilterNew topics={topics} />
+      <NotesTopicsFilter topics={topics} />
     </>
   );
 }

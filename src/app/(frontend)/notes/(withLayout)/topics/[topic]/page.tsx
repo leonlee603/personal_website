@@ -1,7 +1,5 @@
 // All note for a topic on page 1
 import type { Metadata } from 'next'
-// import { sanityFetch } from '@/sanity/lib/live';
-// import { TOPICS_QUERY } from '@/sanity/lib/queries';
 import NotesContainer from "@/components/NotesContainer";
 
 export async function generateMetadata({params} : {params: Promise<{ topic: string }>}):Promise<Metadata> {
@@ -12,15 +10,7 @@ export async function generateMetadata({params} : {params: Promise<{ topic: stri
   }
 }
 
-// export async function generateStaticParams() {
-//   const { data: topics } = await sanityFetch({
-//     query: TOPICS_QUERY,
-//     perspective: "published",
-//     stega: false,
-//   });
-
-//   return topics.map(topic=> ({topic: topic.title}));
-// }
+// Generate static params in layout.tsx for nested dynamic route
 
 export default async function Page({
   params,
