@@ -8,16 +8,9 @@ export async function generateStaticParams() {
     stega: false,
   });
 
-  return topics.map(topic=> ({topic: topic.title}));
+  return topics.map((topic) => ({ topic: topic.title }));
 }
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>
-  <div>123</div>
-  {children}
-  </>
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }
