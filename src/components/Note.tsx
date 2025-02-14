@@ -3,7 +3,7 @@ import { components } from "@/sanity/portableTextComponents";
 import { PortableText } from "next-sanity";
 import { NOTE_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/PublishedAt";
-import { Title } from "@/components/Title";
+import Title from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +28,9 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           <div className="flex flex-col pr-9" style={{ width: "50%" }}>
             <Title>{title}</Title>
             <div className="mt-8 flex flex-col gap-4">
-              <div className="text-lg font-bold text-muted-foreground">Topics</div>
+              <div className="text-lg font-bold text-muted-foreground">
+                Topics
+              </div>
               <div className="flex flex-row items-center gap-4">
                 <Categories categories={topics} />
               </div>
@@ -66,7 +68,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           <div className="potable-text-container" style={{ width: "70%" }}>
             <PortableText value={body} components={components} />
           </div>
-          <div className="" style={{width: "30%"}}>
+          <div className="" style={{ width: "30%" }}>
             <Toc headings={headings} title="Table of Contents" />
           </div>
         </div>

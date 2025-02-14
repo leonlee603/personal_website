@@ -3,7 +3,7 @@ import { components } from "@/sanity/portableTextComponents";
 import { PortableText } from "next-sanity";
 import { POST_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/PublishedAt";
-import { Title } from "@/components/Title";
+import Title from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";

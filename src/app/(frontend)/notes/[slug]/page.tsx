@@ -1,3 +1,4 @@
+// Note detail page
 import { notFound } from "next/navigation";
 import type { Metadata } from 'next'
 import { sanityFetch } from "@/sanity/lib/live";
@@ -29,7 +30,6 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // const { data: notes } = await sanityFetch({ query: NOTES_QUERY });console.log(notes);
   const { data: post } = await sanityFetch({
     query: NOTE_QUERY,
     params: await params,

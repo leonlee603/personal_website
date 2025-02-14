@@ -3,7 +3,7 @@ import { SearchParams } from "next/dist/server/request/search-params";
 
 import BlogContainer from "@/components/BlogContainer";
 import PostPageHeader from "@/components/PostPageHeader";
-import { Title } from "@/components/Title";
+import Title from "@/components/Title";
 
 export const metadata = {
   title: "Blog",
@@ -28,7 +28,7 @@ export default async function Page({
           </div>
         </PostPageHeader>
         <Suspense fallback={<div>Loading...</div>}>
-          <BlogContainer params={params}/>
+          <BlogContainer params={params} />
         </Suspense>
       </div>
     </main>

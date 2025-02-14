@@ -1,28 +1,34 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { sanityFetch } from "@/sanity/lib/live";
+import { NOTES_COUNT, NOTES_IN_TOPIC_COUNT } from "@/sanity/lib/queries";
+import { Button } from "./ui/button";
 
-interface SearchParams {
-  [key: string]: string | string[] | undefined;
-}
-
-export function NotesPagination({
+export default async function NotesPagination({
+  topic,
   currentPage,
-  totalPages,
-  params,
+  notesPerPage,
 }: {
+  topic: string;
   currentPage: number;
-  totalPages: number;
-  params: SearchParams
+  notesPerPage: number;
 }) {
+  const { data: totalNotes } = topic
+    ? await sanityFetch({
+        query: NOTES_IN_TOPIC_COUNT,
+        params: { topic: topic },
+      })
+    : await sanityFetch({ query: NOTES_COUNT });
+  const totalPages = Math.ceil(totalNotes / notesPerPage);
   if (totalPages <= 1) return null;
+  
   return (
     <div className="flex flex-row items-center justify-center gap-4">
       <Link
         href={
-          params.topic
-            ? `?topic=${params.topic}&&page=${currentPage - 1}`
-            : `?page=${currentPage - 1}`
+          topic
+            ? currentPage > 2 ? `/notes/topics/${topic}/page/${currentPage - 1}` : `/notes/topics/${topic}`
+            : currentPage > 2 ? `/notes/page/${currentPage - 1}` : `/notes`
         }
         className={currentPage <= 1 ? "disabled text-muted-foreground" : ""}
         aria-disabled={currentPage <= 1}
@@ -36,9 +42,9 @@ export function NotesPagination({
       {totalPages > 1 && `Page ${currentPage} of ${totalPages}`}
       <Link
         href={
-          params.topic
-            ? `?topic=${params.topic}&&page=${currentPage + 1}`
-            : `?page=${currentPage + 1}`
+          topic
+          ? `/notes/topics/${topic}/page/${currentPage + 1}`
+          : `/notes/page/${currentPage + 1}`
         }
         className={
           currentPage >= totalPages ? "disabled text-muted-foreground" : ""

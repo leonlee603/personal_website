@@ -3,7 +3,7 @@ import { NOTES_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/PublishedAt";
 import Link from "next/link";
 
-export function NoteCard(props: NOTES_QUERYResult[0]) {
+export default function NoteCard(props: NOTES_QUERYResult[0]) {
   const { title, publishedAt, topics } = props;
 
   return (

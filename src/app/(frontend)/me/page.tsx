@@ -1,4 +1,4 @@
-import { Title } from "@/components/Title";
+import Title from "@/components/Title";
 
 export default function Me() {
   return (
@@ -6,5 +6,5 @@ export default function Me() {
       <Title>About Me</Title>
       <hr />
     </section>
-  )
+  );
 }

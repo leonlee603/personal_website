@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Title } from "@/components/Title";
+import Title from "@/components/Title";
 
 //TODO add description
 // export const metadata = {
