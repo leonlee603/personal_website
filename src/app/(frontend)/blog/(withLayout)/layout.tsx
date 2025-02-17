@@ -1,22 +1,21 @@
 import { Suspense } from "react";
-import { SearchParams } from "next/dist/server/request/search-params";
 
-import BlogContainer from "@/components/BlogContainer";
+import BlogCategoriesFilterContainer from "@/components/BlogCategoriesFilterContainer";
 import PostPageHeader from "@/components/PostPageHeader";
 import Title from "@/components/Title";
 
 export const metadata = {
-  title: "Blog",
+  title: {
+    template: "%s | Leon Lee",
+    default: "Notes",
+  },
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
-  // get ready for pagination
-  const params = await searchParams;
-
+export default function NotesLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <main className="px-8">
       <div className="container mx-auto max-w-1248">
@@ -27,9 +26,10 @@ export default async function Page({
             else.
           </div>
         </PostPageHeader>
-        <Suspense fallback={<div>Loading...</div>}>
-          <BlogContainer params={params} />
+        <Suspense>
+          <BlogCategoriesFilterContainer />
         </Suspense>
+        {children}
       </div>
     </main>
   );

@@ -1,3 +1,4 @@
+// Blog detail page
 import { notFound } from "next/navigation";
 import type { Metadata } from 'next'
 import { sanityFetch } from "@/sanity/lib/live";

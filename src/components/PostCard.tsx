@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function PostCard(props: POSTS_QUERYResult[0]) {
+export default function PostCard(props: POSTS_QUERYResult[0]) {
   const { title, mainImage, publishedAt, categories } = props;
 
   return (
