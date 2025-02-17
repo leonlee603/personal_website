@@ -14,21 +14,6 @@ export async function generateMetadata({params} : {params: Promise<{ topic: stri
   }
 }
 
-// export async function generateStaticParams() {
-//   const { data: topics } = await sanityFetch({
-//     query: TOPICS_QUERY,
-//     perspective: "published",
-//     stega: false,
-//   });
-//   const staticParamsArr = [];
-//   for (let i = 0; i < topics.length; i++) {
-//     for (let j = 0; j < (Math.ceil(topics[i].postCount / NOTES_PER_PAGE)); j++) {
-//       staticParamsArr.push({topic: topics[i].title, page: `${j+1}`})
-//     }
-//   }
-//   return staticParamsArr;
-// }
-
 export async function generateStaticParams({ params }: { params: { topic: string } }) {
   const { topic } = params;
   const { data: totalNotes } = await sanityFetch({
