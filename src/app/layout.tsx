@@ -1,6 +1,10 @@
 import '@/app/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
+export const metadata = {
+  description: "Personal website / notebook / blog of a Software developer"
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
