@@ -41,8 +41,7 @@ export const components: PortableTextComponents = {
         <Image
           className="not-prose h-auto w-full"
           src={urlFor(props.value)
-            .width(600)
-            .height(400)
+            .width(873)
             .quality(80)
             .auto('format')
             .url()}

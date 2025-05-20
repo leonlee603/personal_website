@@ -4,14 +4,14 @@ import { PortableText } from "next-sanity";
 import { NOTE_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/PublishedAt";
 import Title from "@/components/Title";
-import { urlFor } from "@/sanity/lib/image";
-import Image from "next/image";
+// import { urlFor } from "@/sanity/lib/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Toc } from "./TableOfContent";
 
 export function Note(props: NonNullable<NOTE_QUERYResult>) {
-  const { title, mainImage, body, publishedAt, topics, headings } = props;
+  const { title, body, publishedAt, topics, headings } = props;
 
   return (
     <article className="flex flex-col gap-20">
@@ -25,7 +25,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           &nbsp;/
         </div>
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col pr-9" style={{ width: "50%" }}>
+          <div className="flex flex-col pr-9" style={{ width: "70%" }}>
             <Title>{title}</Title>
             <div className="mt-8 flex flex-col gap-4">
               <div className="text-lg font-bold text-muted-foreground">
@@ -40,8 +40,8 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden rounded-md" style={{ width: "50%" }}>
-            {mainImage ? (
+          <div className="overflow-hidden rounded-md" style={{ width: "30%" }}>
+            {/* {mainImage ? (
               <figure className="flex flex-col items-start gap-2">
                 <Image
                   src={urlFor(mainImage).width(624).url()}
@@ -55,7 +55,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
                   alt=""
                 />
               </figure>
-            ) : null}
+            ) : null} */}
           </div>
         </div>
       </header>
