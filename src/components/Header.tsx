@@ -26,8 +26,8 @@ export default function Header() {
           <ul className="flex items-center gap-1 font-semibold">
             {links.map((link) => (
               <li key={link.href}>
-                <Button variant="ghost" asChild>
-                  <Link className={`${link.href === pathName ? 'text-primary' : ''} hover:text-primary text-base`} href={link.href}>
+                <Button variant="ghost" asChild className="text-base">
+                  <Link className={`${link.href === pathName ? 'text-primary' : ''} hover:text-primary`} href={link.href}>
                     {link.title}
                   </Link>
                 </Button>
