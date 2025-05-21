@@ -36,7 +36,7 @@ export default async function BlogListHome({
       {posts.map((post) => {
         const { title, publishedAt, categories } = post;
         return (
-          <Link key={post._id}className="" href={`/notes/${post.slug!.current}`}>
+          <Link key={post._id}className="" href={`/blog/${post.slug!.current}`}>
             <div className="flex flex-row justify-between gap-6 overflow-hidden border-b-2 border-dotted py-5">
               <div className="max-w-70 text-lg font-semibold leading-none tracking-tight">
                 {title}
