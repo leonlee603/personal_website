@@ -13,7 +13,7 @@ const links = [
   { href: "/studio", title: "Studio" },
 ];
 
-export function Header() {
+export default function Header() {
   const pathName = usePathname();
 
   return (

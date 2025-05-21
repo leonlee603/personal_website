@@ -1,11 +1,12 @@
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata = {
   title: {
     template: "%s | Leon Lee",
-    default: "Leon Lee"
-  }
+    default: "Leon Lee",
+  },
 };
 
 export default function FrontendLayout({
@@ -14,9 +15,10 @@ export default function FrontendLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="min-h-screen">
+    <section className="flex min-h-screen flex-col">
       <Header />
-      {children}
+      <div className="flex-1">{children}</div>
+      <Footer />
       <SanityLive />
     </section>
   );
