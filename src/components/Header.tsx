@@ -27,7 +27,7 @@ export default function Header() {
             {links.map((link) => (
               <li key={link.href}>
                 <Button variant="ghost" asChild>
-                  <Link className={`${link.href === pathName ? 'text-primary' : ''} hover:text-primary`} href={link.href}>
+                  <Link className={`${link.href === pathName ? 'text-primary' : ''} hover:text-primary text-base`} href={link.href}>
                     {link.title}
                   </Link>
                 </Button>
