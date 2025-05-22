@@ -32,28 +32,34 @@ export default async function BlogListHome({
   }
 
   return (
-    <div className="flex flex-col border-t-2 border-dotted pb-12">
-      {posts.map((post) => {
-        const { title, publishedAt, categories } = post;
-        return (
-          <Link key={post._id}className="" href={`/blog/${post.slug!.current}`}>
-            <div className="flex flex-row justify-between gap-6 overflow-hidden border-b-2 border-dotted py-5">
-              <div className="max-w-70 text-lg font-semibold leading-none tracking-tight">
-                {title}
-              </div>
-              <div className="flex flex-row items-center gap-4">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Categories categories={categories} />
+    <div className="flex flex-col border-l-2 border-dotted pb-12">
+      <div className="ml-5 border-t-2 border-dotted">
+        {posts.map((post) => {
+          const { title, publishedAt, categories } = post;
+          return (
+            <Link
+              key={post._id}
+              className=""
+              href={`/blog/${post.slug!.current}`}
+            >
+              <div className="flex flex-row justify-between gap-6 overflow-hidden border-b-2 border-dotted py-5">
+                <div className="max-w-70 text-lg font-semibold leading-none tracking-tight">
+                  {title}
                 </div>
-                <PublishedAt
-                  publishedAt={publishedAt}
-                  className="mb-0 text-nowrap"
-                />
+                <div className="flex flex-row items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Categories categories={categories} />
+                  </div>
+                  <PublishedAt
+                    publishedAt={publishedAt}
+                    className="mb-0 text-nowrap"
+                  />
+                </div>
               </div>
-            </div>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

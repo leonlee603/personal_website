@@ -3,8 +3,9 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import Title from "@/components/Title";
 import { Button } from "@/components/ui/button";
 import { Suspense } from "react";
-import NotesList from "@/components/NotesList";
+// import NotesList from "@/components/NotesList";
 import BlogListHome from "@/components/BlogListHome";
+import NotesListHome from "@/components/NotesListHome";
 
 //TODO add description
 export const metadata = {
@@ -21,11 +22,15 @@ export default async function Page() {
             <FaMapMarkerAlt className="text-primary" />
             <div className="text-muted-foreground">Hong Kong</div>
           </div>
-          <p>
-            I&apos;m a self-taught developer passionate on learning new things,
-            currently working on Next.js.
-          </p>
-          <p>I enjoy weight-lifting, reading books and playing video games.</p>
+          <div className="text-muted-foreground">
+            <p>
+              I&apos;m a self-taught developer passionate on learning new
+              things, currently working on Next.js.
+            </p>
+            <p>
+              I enjoy weight-lifting, reading books and playing video games.
+            </p>
+          </div>
         </div>
         <Button
           asChild
@@ -43,9 +48,11 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Blog
             </h2>
-            <Link href="/blog">See all</Link>
+            <Link className="text-primary" href="/blog">
+              See all
+            </Link>
           </div>
-          <div className="mb-12">
+          <div className="mb-12 text-muted-foreground">
             Articles about personal life, hobbies, photography, and everything
             else.
           </div>
@@ -58,18 +65,26 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Notes
             </h2>
-            <Link href="/notes">See all</Link>
+            <Link className="text-primary" href="/notes">
+              See all
+            </Link>
           </div>
-          <div className="mb-12">
+          <div className="mb-12 text-muted-foreground">
             Notes, references, and tutorials on programming, web development.
           </div>
           <Suspense>
-            <NotesList
-              topic=""
-              currentPage={1}
-              notesPerPage={5}
-            />
+            <NotesListHome topic="" currentPage={1} notesPerPage={5} />
           </Suspense>
+        </div>
+        <div className="flex flex-col gap-3 py-12">
+          <div className="flex items-baseline gap-4">
+            <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
+              Stacks
+            </h2>
+            <Link className="text-primary" href="/notes">
+              See all
+            </Link>
+          </div>
         </div>
       </div>
     </section>
