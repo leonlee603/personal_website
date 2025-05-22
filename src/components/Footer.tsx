@@ -43,7 +43,7 @@ export default function Footer() {
             <RiLinkedinBoxLine className="h-5 w-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/leonlee603"
+            href="https://github.com/leonlee603"
             target="_blank"
             className="rounded-full bg-secondary p-2"
           >
