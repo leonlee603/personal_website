@@ -1,13 +1,24 @@
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import Title from "@/components/Title";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Suspense } from "react";
-// import NotesList from "@/components/NotesList";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Title from "@/components/Title";
 import BlogListHome from "@/components/BlogListHome";
 import NotesListHome from "@/components/NotesListHome";
+import figmaIcon from "../../../public/stacks/figma.avif";
+import reactIcon from "../../../public/stacks/react.svg";
+import notionIcon from "../../../public/stacks/notion.avif";
+import nextIcon from "../../../public/stacks/nextjs.svg";
+import wordpressIcon from "../../../public/stacks/wordpress.png";
+import teamsIcon from "../../../public/stacks/teams.svg";
 
-//TODO add description
 export const metadata = {
   description: "Developer, a personal website",
 };
@@ -42,7 +53,6 @@ export default async function Page() {
             More about me
           </Link>
         </Button>
-        {/* <hr /> */}
         <div className="flex flex-col gap-3 py-12">
           <div className="flex items-baseline gap-4">
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
@@ -81,9 +91,104 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Stacks
             </h2>
-            <Link className="text-primary" href="/notes">
+            <Link className="text-primary" href="/stacks">
               See all
             </Link>
+          </div>
+          <div className="mb-12 text-muted-foreground">
+            Tools and languages I use on a regular basis.
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-2">
+                  <Image
+                    className="w-full max-w-[40px]"
+                    src={reactIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>React</CardTitle>
+                <CardDescription>Javascript Library</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-2">
+                  <Image
+                    className="w-full max-w-[40px]"
+                    src={nextIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>Next.js</CardTitle>
+                <CardDescription>React Framework</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3">
+                  <Image
+                    className="w-full max-w-[32px]"
+                    src={wordpressIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>Wordpress</CardTitle>
+                <CardDescription>Dynamic Development</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3">
+                  <Image
+                    className="w-[32px]"
+                    src={figmaIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>Figma</CardTitle>
+                <CardDescription>Web Design</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3">
+                  <Image
+                    className="w-full max-w-[32px]"
+                    src={notionIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>Notion</CardTitle>
+                <CardDescription>Note Taking App</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex shadow-none">
+              <div className="flex items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3">
+                  <Image
+                    className="w-full max-w-[32px]"
+                    src={teamsIcon}
+                    alt="figma icon"
+                  />
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle>Teams</CardTitle>
+                <CardDescription>Message App</CardDescription>
+              </CardHeader>
+            </Card>
           </div>
         </div>
       </div>
