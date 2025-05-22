@@ -21,7 +21,7 @@ export default function NotesLayout({
       <div className="container mx-auto max-w-1248">
         <PostPageHeader>
           <Title>Notes</Title>
-          <div>
+          <div className="text-muted-foreground">
             Notes, references, and tutorials on programming, web development.
           </div>
         </PostPageHeader>

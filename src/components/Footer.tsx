@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-row items-center gap-2">
           <div className="text-muted-foreground">Keep in touch</div>
           <a
-            href="https://www.instagram.com/418_tea_pot/"
+            href="https://www.instagram.com/418_tea_pot"
             target="_blank"
             className="rounded-full bg-secondary p-2"
           >
