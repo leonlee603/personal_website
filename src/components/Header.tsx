@@ -6,10 +6,11 @@ import { ThemeToggleBtn } from "./ModeToggleBtn";
 import { Button } from "./ui/button";
 
 const links = [
-  { href: "/me", title: "Me" },
   { href: "/blog", title: "Blog" },
   { href: "/notes", title: "Notes" },
   { href: "/projects", title: "Projects" },
+  { href: "/stacks", title: "Stacks" },
+  { href: "/me", title: "Me" },
   { href: "/studio", title: "Studio" },
 ];
 

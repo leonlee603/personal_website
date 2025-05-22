@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Title from "@/components/Title";
 import PostPageHeader from "@/components/PostPageHeader";
 import figmaIcon from "../../../../public/stacks/figma.avif";
@@ -24,7 +29,9 @@ export default function page() {
           <div className="text-muted-foreground">My Tech Toolbox</div>
         </PostPageHeader>
         <hr />
-        <div className="grid grid-cols-3 gap-4">
+        <div className="mb-24 mt-12">
+          
+          <div className="grid grid-cols-3 gap-4">
             <Card className="flex shadow-none">
               <div className="flex items-center pl-6">
                 <div className="rounded-sm bg-secondary p-2">
@@ -142,6 +149,7 @@ export default function page() {
               </CardHeader>
             </Card>
           </div>
+        </div>
       </section>
     </main>
   );
