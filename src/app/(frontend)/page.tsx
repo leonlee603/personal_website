@@ -16,7 +16,7 @@ import figmaIcon from "../../../public/stacks/figma.avif";
 import reactIcon from "../../../public/stacks/react.svg";
 import notionIcon from "../../../public/stacks/notion.avif";
 import nextIcon from "../../../public/stacks/nextjs.svg";
-import wordpressIcon from "../../../public/stacks/wordpress.png";
+import wordpressIcon from "../../../public/stacks/wordpress.svg";
 import teamsIcon from "../../../public/stacks/teams.svg";
 
 export const metadata = {
@@ -99,9 +99,9 @@ export default async function Page() {
             Tools and languages I use on a regular basis.
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-2">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[40px]"
                     src={reactIcon}
@@ -114,9 +114,9 @@ export default async function Page() {
                 <CardDescription>Javascript Library</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-2">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[40px]"
                     src={nextIcon}
@@ -129,9 +129,9 @@ export default async function Page() {
                 <CardDescription>React Framework</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={wordpressIcon}
@@ -144,9 +144,9 @@ export default async function Page() {
                 <CardDescription>Dynamic Development</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-[32px]"
                     src={figmaIcon}
@@ -159,9 +159,9 @@ export default async function Page() {
                 <CardDescription>Web Design</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={notionIcon}
@@ -174,9 +174,9 @@ export default async function Page() {
                 <CardDescription>Note Taking App</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="flex shadow-none">
-              <div className="flex items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3">
+            <Card className="flex shadow-none dark:bg-muted">
+              <div className="flex min-w-[80px] items-center pl-6">
+                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={teamsIcon}
