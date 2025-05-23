@@ -41,7 +41,7 @@ export default async function Page({
   
   return (
     <div className="px-8">
-      <main className="container mx-auto max-w-1248 pb-24 pt-12">
+      <main className="container mx-auto mb-10 mt-6 max-w-1248 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
         <Post {...post} />
       </main>
     </div>

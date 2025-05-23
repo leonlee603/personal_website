@@ -13,7 +13,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
   const { title, mainImage, body, publishedAt, categories } = props;
 
   return (
-    <article className="flex flex-col gap-20">
+    <article className="flex flex-col gap-10 md:gap-14 lg:gap-20">
       <header className="flex flex-col gap-4">
         <div className="inline-block">
           <Link href="/blog">
@@ -25,7 +25,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
         </div>
         <div className="flex flex-col">
           <Title>{title}</Title>
-          <div className="mt-8 flex flex-col gap-4">
+          <div className="mt-4 flex flex-col gap-4 md:mt-6 lg:mt-8">
             <div className="text-lg font-bold text-muted-foreground">
               Topics
             </div>
@@ -39,9 +39,9 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
           </div>
         </div>
       </header>
-      <div className="gap- flex flex-row gap-11">
+      <div className="flex flex-col gap-11 md:flex-row">
         <div>
-          <div className="overflow-hidden rounded-md">
+          <div className="w-[100%] overflow-hidden rounded-md md:w-auto">
             {mainImage ? (
               <figure className="flex flex-col items-start gap-2 lg:col-span-4">
                 <Image
@@ -49,12 +49,16 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
                   width={400}
                   height={400}
                   alt=""
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
                 />
               </figure>
             ) : null}
           </div>
         </div>
-        <div style={{ width: "70%" }}>
+        <div className="w-[100%] md:w-[70%]">
           {body ? (
             <div
               className="prose text-foreground lg:prose-lg"

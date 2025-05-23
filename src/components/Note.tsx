@@ -14,7 +14,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
   const { title, body, publishedAt, topics, headings } = props;
 
   return (
-    <article className="flex flex-col gap-20">
+    <article className="flex flex-col gap-10 md:gap-14 lg:gap-20">
       <header className="flex flex-col gap-4">
         <div className="inline-block">
           <Link href="/notes">
@@ -25,9 +25,9 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           &nbsp;/
         </div>
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col pr-9" style={{ width: "70%" }}>
+          <div className="flex w-[100%] flex-col pr-0 md:w-[70%] md:pr-9">
             <Title>{title}</Title>
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-4 flex flex-col gap-4 md:mt-6 lg:mt-8">
               <div className="text-lg font-bold text-muted-foreground">
                 Topics
               </div>
@@ -40,7 +40,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden rounded-md" style={{ width: "30%" }}>
+          <div className="hidden overflow-hidden rounded-md md:block md:w-[30%]">
             {/* {mainImage ? (
               <figure className="flex flex-col items-start gap-2">
                 <Image
@@ -65,10 +65,10 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           className="prose flex flex-row text-foreground lg:prose-lg"
           style={{ maxWidth: "unset" }}
         >
-          <div className="potable-text-container" style={{ width: "70%" }}>
+          <div className="potable-text-container w-[100%] md:w-[70%]">
             <PortableText value={body} components={components} />
           </div>
-          <div className="" style={{ width: "30%" }}>
+          <div className="hidden md:block md:w-[30%]">
             <Toc headings={headings} title="Table of Contents" />
           </div>
         </div>
