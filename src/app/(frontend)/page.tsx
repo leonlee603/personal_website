@@ -18,6 +18,7 @@ import notionIcon from "../../../public/stacks/notion.avif";
 import nextIcon from "../../../public/stacks/nextjs.svg";
 import wordpressIcon from "../../../public/stacks/wordpress.svg";
 import teamsIcon from "../../../public/stacks/teams.svg";
+import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = {
   description: "Developer, a personal website",
@@ -84,6 +85,44 @@ export default async function Page() {
           </div>
           <Suspense>
             <NotesListHome topic="" currentPage={1} notesPerPage={5} />
+          </Suspense>
+        </div>
+        <div className="flex flex-col gap-3 py-6 md:py-9 lg:py-12">
+          <div className="flex items-baseline gap-4">
+            <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
+              Projects
+            </h2>
+            <Link className="text-primary" href="/projects">
+              See all
+            </Link>
+          </div>
+          <div className="mb-6 text-muted-foreground md:mb-12">
+            Some of the projects I&apos; made over the years.
+          </div>
+          <Suspense>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <ProjectCard
+                label="Personal website"
+                description="Portfolio"
+                infoLink="/123"
+                demoLink="https://personal-website-hazel-gamma.vercel.app"
+                sourceLink="https://github.com/leonlee603/personal_website"
+              />
+              <ProjectCard
+                label="Money book"
+                description="Finances tracking app"
+                infoLink="/123"
+                demoLink="https://money-book-delta.vercel.app"
+                sourceLink="https://github.com/leonlee603/money_book"
+              />
+              <ProjectCard
+                label="Next auth demo"
+                description="Authentication demo with Next.js and Auth.js"
+                infoLink="/123"
+                demoLink="https://next-auth-demo-six-nu.vercel.app"
+                sourceLink="https://github.com/leonlee603/next-auth-demo"
+              />
+            </div>
           </Suspense>
         </div>
         <div className="flex flex-col gap-3 py-6 md:py-9 lg:py-12">
