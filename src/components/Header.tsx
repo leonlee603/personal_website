@@ -69,7 +69,7 @@ export default function Header() {
                               className="text-base hover:bg-transparent"
                             >
                               <Link
-                                className={`text-2xl ${link.href === pathName ? "text-primary" : ""}`}
+                                className={`text-2xl ${pathName.startsWith(link.href) ? "text-primary" : ""}`}
                                 href={link.href}
                               >
                                 {link.title}
@@ -90,7 +90,7 @@ export default function Header() {
                 <li key={link.href}>
                   <Button variant="ghost" asChild className="text-base">
                     <Link
-                      className={`${link.href === pathName ? "text-primary" : ""} hover:text-primary`}
+                      className={`${pathName.startsWith(link.href) ? "text-primary" : ""} hover:text-primary`}
                       href={link.href}
                     >
                       {link.title}

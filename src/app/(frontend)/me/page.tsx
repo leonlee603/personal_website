@@ -17,7 +17,7 @@ export default function Me() {
         <div className="mb-10 mt-6 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
           <div className="mb-12">
             <p className="mb-3 text-muted-foreground">
-              Hey, I&apos;m Leon!. I&apos;m a front-end developer, who graduated
+              Hey, I&apos;m Leon! I&apos;m a front-end developer, who graduated
               from The Hong Kong University of Science and Technology (HKUST)
               majoring in Physics. During my study, I have developed a better
               understanding of abstract theories that involve logical thinking.
