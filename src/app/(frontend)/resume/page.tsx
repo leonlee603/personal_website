@@ -48,16 +48,64 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Experience
             </h2>
-            <ul className="flex flex-col gap-2 font-semibold text-primary">
-              <li></li>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <div className="text-lg font-medium">Web Developer</div>
+                <div className="text-muted-foreground">
+                  Miracle Media Production
+                </div>
+                <div className="text-muted-foreground">Aug 2021 – Present</div>
+              </li>
+              <li>
+                <div className="text-lg font-medium">
+                  Merchandiser (Part-time)
+                </div>
+                <div className="text-muted-foreground">
+                  Grace A.J. Manufacturing Co., Ltd.
+                </div>
+                <div className="text-muted-foreground">
+                  Feb 2020 – July 2021
+                </div>
+              </li>
+              <li>
+                <div className="text-lg font-medium">Merchandiser</div>
+                <div className="text-muted-foreground">
+                  Van Gogh Senses Limited
+                </div>
+                <div className="text-muted-foreground">Jul 2017 – Jan 2020</div>
+              </li>
+              <li>
+                <div className="text-lg font-medium">
+                  Assistant Merchandiser
+                </div>
+                <div className="text-muted-foreground">
+                  Vigor International (H.K.) Limited
+                </div>
+                <div className="text-muted-foreground">Jun 2014 - Jan 2016</div>
+              </li>
+              <li>
+                <div className="text-lg font-medium">
+                  Junior Sales Administrator
+                </div>
+                <div className="text-muted-foreground">HLD Global Limited</div>
+                <div className="text-muted-foreground">Oct 2012 – Mar 2014</div>
+              </li>
             </ul>
           </div>
           <div className="mb-12">
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Education
             </h2>
-            <ul className="flex flex-col gap-2 font-semibold text-primary">
-              <li></li>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <div className="text-lg font-semibold">
+                  Bachelor of Science, Major in Physics
+                </div>
+                <div className="text-muted-foreground">
+                  The Hong Kong University Of Science And Technology, Sep 2009 -
+                  Jul 2012
+                </div>
+              </li>
             </ul>
           </div>
           <div className="mb-12">
@@ -71,6 +119,23 @@ export default function page() {
               <li>CMS : Wordpress, Sanity, Payload</li>
               <li>Database : Supabase, Neon, Prisma, Drizzle</li>
               <li>Version Control System : Git, Bitbucket, GitHub</li>
+            </ul>
+          </div>
+          <div className="mb-12">
+            <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
+              Personality
+            </h2>
+            <ul className="flex flex-col gap-2 text-muted-foreground">
+              <li>
+                A responsible team player with a mature, professional and
+                positive attitude.
+              </li>
+              <li>
+                A self-motivated fast learner who is capable to work well under
+                pressure.
+              </li>
+              <li>Eager to learn and have a strong passion for coding.</li>
+              <li>Strong communication skills and detail oriented.</li>
             </ul>
           </div>
           <div className="mb-12">
