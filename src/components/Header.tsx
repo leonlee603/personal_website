@@ -6,12 +6,14 @@ import { ThemeToggleBtn } from "./ModeToggleBtn";
 import { Button } from "./ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { AlignJustify } from "lucide-react";
 
 const links = [
   { href: "/blog", title: "Blog" },
@@ -31,19 +33,58 @@ export default function Header() {
           Leon
         </Link>
         <div>
-          <Sheet>
-            <SheetTrigger>Open</SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
-          <div className="flex flex-row gap-6">
+          <div className="flex gap-3 md:hidden">
+          <ThemeToggleBtn />
+            <Sheet>
+              <SheetTrigger>
+                <AlignJustify />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader className="flex h-full justify-center">
+                  <SheetTitle></SheetTitle>
+                  <SheetDescription className="m-0" asChild>
+                    <ul className="flex flex-col items-center gap-3">
+                      <li>
+                        <SheetClose asChild>
+                          <Button
+                            variant="ghost"
+                            asChild
+                            className="text-base hover:bg-transparent"
+                          >
+                            <Link
+                              className={`text-2xl ${pathName === "/" ? "text-primary" : ""}`}
+                              href="/"
+                            >
+                              Home
+                            </Link>
+                          </Button>
+                        </SheetClose>
+                      </li>
+                      {links.map((link) => (
+                        <li key={link.href}>
+                          <SheetClose asChild>
+                            <Button
+                              variant="ghost"
+                              asChild
+                              className="text-base hover:bg-transparent"
+                            >
+                              <Link
+                                className={`text-2xl ${link.href === pathName ? "text-primary" : ""}`}
+                                href={link.href}
+                              >
+                                {link.title}
+                              </Link>
+                            </Button>
+                          </SheetClose>
+                        </li>
+                      ))}
+                    </ul>
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+          <div className="hidden flex-row gap-6 md:flex">
             <ul className="flex items-center gap-1 font-semibold">
               {links.map((link) => (
                 <li key={link.href}>
@@ -58,7 +99,6 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-
             <ThemeToggleBtn />
           </div>
         </div>
