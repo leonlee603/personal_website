@@ -10,8 +10,7 @@ const links = [
   { href: "/notes", title: "Notes" },
   { href: "/projects", title: "Projects" },
   { href: "/stacks", title: "Stacks" },
-  { href: "/me", title: "Me" },
-  { href: "/studio", title: "Studio" },
+  { href: "/me", title: "About" },
 ];
 
 export default function Header() {

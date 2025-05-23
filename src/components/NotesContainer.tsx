@@ -17,7 +17,7 @@ export default function NotesContainer({
 
   return (
     <>
-      <div className="mb-24 mt-12">
+      <div className="mb-10 mt-6 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
         <Suspense>
           <NotesList
             topic={topic}

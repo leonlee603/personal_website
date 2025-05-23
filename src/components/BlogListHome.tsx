@@ -32,7 +32,7 @@ export default async function BlogListHome({
   }
 
   return (
-    <div className="flex flex-col border-l-2 border-dotted pb-12">
+    <div className="flex flex-col border-l-2 border-dotted pb-6 md:pb-9 lg:pb-12">
       <div className="ml-5 border-t-2 border-dotted">
         {posts.map((post) => {
           const { title, publishedAt, categories } = post;
@@ -42,8 +42,8 @@ export default async function BlogListHome({
               className=""
               href={`/blog/${post.slug!.current}`}
             >
-              <div className="flex flex-row justify-between gap-6 overflow-hidden border-b-2 border-dotted py-5">
-                <div className="max-w-70 text-lg font-semibold leading-none tracking-tight">
+              <div className="flex flex-col justify-between gap-2 overflow-hidden border-b-2 border-dotted py-3 md:gap-4 md:py-4 lg:flex-row lg:gap-6 lg:py-5">
+                <div className="max-w-70 text-base font-semibold leading-none tracking-tight md:text-lg">
                   {title}
                 </div>
                 <div className="flex flex-row items-center gap-4">

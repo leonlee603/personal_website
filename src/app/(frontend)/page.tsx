@@ -27,7 +27,7 @@ export default async function Page() {
   return (
     <section className="px-8">
       <div className="container mx-auto max-w-1248">
-        <div className="flex flex-col gap-3 py-12">
+        <div className="flex flex-col gap-3 py-8 md:py-9 lg:py-12">
           <Title>Hey there! I&apos;m Leon 🌳</Title>
           <div className="mb-4 flex items-center gap-2">
             <FaMapMarkerAlt className="text-primary" />
@@ -47,13 +47,13 @@ export default async function Page() {
           asChild
           variant="outline"
           size="lg"
-          className="mb-12 inline-flex"
+          className="mb-6 inline-flex px-4 md:mb-12 md:px-6 lg:px-8"
         >
           <Link className="hover:text-primary" href="/me">
             More about me
           </Link>
         </Button>
-        <div className="flex flex-col gap-3 py-12">
+        <div className="flex flex-col gap-3 py-6 md:py-9 lg:py-12">
           <div className="flex items-baseline gap-4">
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Blog
@@ -62,7 +62,7 @@ export default async function Page() {
               See all
             </Link>
           </div>
-          <div className="mb-12 text-muted-foreground">
+          <div className="mb-6 text-muted-foreground md:mb-12">
             Articles about personal life, hobbies, photography, and everything
             else.
           </div>
@@ -70,7 +70,7 @@ export default async function Page() {
             <BlogListHome category="" currentPage={1} postsPerPage={4} />
           </Suspense>
         </div>
-        <div className="flex flex-col gap-3 py-12">
+        <div className="flex flex-col gap-3 py-6 md:py-9 lg:py-12">
           <div className="flex items-baseline gap-4">
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Notes
@@ -79,14 +79,14 @@ export default async function Page() {
               See all
             </Link>
           </div>
-          <div className="mb-12 text-muted-foreground">
+          <div className="mb-6 text-muted-foreground md:mb-12">
             Notes, references, and tutorials on programming, web development.
           </div>
           <Suspense>
             <NotesListHome topic="" currentPage={1} notesPerPage={5} />
           </Suspense>
         </div>
-        <div className="flex flex-col gap-3 py-12">
+        <div className="flex flex-col gap-3 py-6 md:py-9 lg:py-12">
           <div className="flex items-baseline gap-4">
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Stacks
@@ -95,13 +95,13 @@ export default async function Page() {
               See all
             </Link>
           </div>
-          <div className="mb-12 text-muted-foreground">
+          <div className="mb-6 text-muted-foreground md:mb-12">
             Tools and languages I use on a regular basis.
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[40px]"
                     src={reactIcon}
@@ -116,7 +116,7 @@ export default async function Page() {
             </Card>
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[40px]"
                     src={nextIcon}
@@ -131,7 +131,7 @@ export default async function Page() {
             </Card>
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={wordpressIcon}
@@ -146,7 +146,7 @@ export default async function Page() {
             </Card>
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-[32px]"
                     src={figmaIcon}
@@ -161,7 +161,7 @@ export default async function Page() {
             </Card>
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={notionIcon}
@@ -176,7 +176,7 @@ export default async function Page() {
             </Card>
             <Card className="flex shadow-none dark:bg-muted">
               <div className="flex min-w-[80px] items-center pl-6">
-                <div className="rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
                   <Image
                     className="w-full max-w-[32px]"
                     src={teamsIcon}

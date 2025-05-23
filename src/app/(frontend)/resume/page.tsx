@@ -13,9 +13,9 @@ export default function page() {
           <Title>Leon Lee</Title>
         </PostPageHeader>
         <hr />
-        <div className="mb-24 mt-12">
+        <div className="mb-10 mt-6 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
           <div className="mb-12">
-            <ul className=" flex flex-col text-muted-foreground gap-2">
+            <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>
                 Email:&nbsp;
                 <a className="text-primary" href="mailto:" target="_blank">
@@ -48,7 +48,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Experience
             </h2>
-            <ul className=" flex flex-col text-primary gap-2 font-semibold">
+            <ul className="flex flex-col gap-2 font-semibold text-primary">
               <li></li>
             </ul>
           </div>
@@ -56,7 +56,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Education
             </h2>
-            <ul className=" flex flex-col text-primary gap-2 font-semibold">
+            <ul className="flex flex-col gap-2 font-semibold text-primary">
               <li></li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Skills
             </h2>
-            <ul className=" flex flex-col text-muted-foreground gap-2">
+            <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>Languages : Javascript, Typescript, PHP, HTML, CSS</li>
               <li>Frameworks : Next.js, Gatsby</li>
               <li>Libraries : React, Auth.js, Clerk, TailwindCSS, Bootstrap</li>
@@ -77,7 +77,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Languages
             </h2>
-            <ul className=" flex flex-col text-muted-foreground gap-2">
+            <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>Cantonese : Native</li>
               <li>English : Fluent</li>
               <li>Mandarin : Fluent</li>
@@ -87,7 +87,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Availability
             </h2>
-            <ul className=" flex flex-col text-muted-foreground gap-2">
+            <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>One month&apos;s notice</li>
             </ul>
           </div>

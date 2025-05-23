@@ -14,9 +14,9 @@ export default function Me() {
           <Title>About Me</Title>
         </PostPageHeader>
         <hr />
-        <div className="mb-24 mt-12">
+        <div className="mb-10 mt-6 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
           <div className="mb-12">
-            <p className="text-muted-foreground mb-3">
+            <p className="mb-3 text-muted-foreground">
               Hey, I&apos;m Leon!. I&apos;m a front-end developer, who graduated
               from The Hong Kong University of Science and Technology (HKUST)
               majoring in Physics. During my study, I have developed a better
@@ -41,10 +41,10 @@ export default function Me() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Contact
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="mb-6 text-muted-foreground">
               Feel free to connect with me via socials.
             </p>
-            <ul className=" flex flex-col text-primary gap-2 font-semibold">
+            <ul className="flex flex-col gap-2 text-primary">
               <li>
                 <a
                   className="inline-block"
@@ -73,10 +73,10 @@ export default function Me() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Hobbies
             </h2>
-            <ul className=" flex flex-col text-muted-foreground gap-2">
+            <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>Gym</li>
-              <li>Reading</li>
-              <li>Video Games</li>
+              <li>Reading books</li>
+              <li>Video games</li>
               <li>Photography</li>
             </ul>
           </div>
@@ -84,7 +84,7 @@ export default function Me() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Resume
             </h2>
-            <ul className=" flex flex-col text-primary gap-2">
+            <ul className="flex flex-col gap-2 text-primary">
               <li>
                 <Link href="/resume">My resume</Link>
               </li>
