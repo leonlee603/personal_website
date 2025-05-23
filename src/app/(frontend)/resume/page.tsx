@@ -42,6 +42,7 @@ export default function page() {
                   @leonlee603
                 </a>
               </li>
+              <li>Tel:&nbsp;+852 6282 9126</li>
             </ul>
           </div>
           <div className="mb-12">
