@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PostPageHeader from "@/components/PostPageHeader";
 import Title from "@/components/Title";
 
@@ -49,7 +50,7 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Experience
             </h2>
-            <ul className="flex flex-col gap-3">
+            <ul className="mb-4 flex flex-col gap-3">
               <li>
                 <div className="text-lg font-medium">Web Developer</div>
                 <div className="text-muted-foreground">
@@ -92,6 +93,15 @@ export default function page() {
                 <div className="text-muted-foreground">Oct 2012 – Mar 2014</div>
               </li>
             </ul>
+            <p className="text-muted-foreground">
+              Wonder why I switch career from merchandiser to web developer? Check out {" "}
+              <Link
+                className="text-primary"
+                href="/blog/from-merchandiser-to-web-developer"
+              >
+                here!
+              </Link>
+            </p>
           </div>
           <div className="mb-12">
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">

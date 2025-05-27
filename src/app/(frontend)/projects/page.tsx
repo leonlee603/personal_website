@@ -9,7 +9,7 @@ import oxfamImg from "../../../../public/projects/oxfam.jpeg";
 import stsImg from "../../../../public/projects/sts.jpeg";
 import chechkImg from "../../../../public/projects/chechk.jpeg";
 import cscehkImg from "../../../../public/projects/cscechk.jpeg";
-import grandMooreImg from "../../../../public/projects/grandMoore.jpeg"
+import grandMooreImg from "../../../../public/projects/grandMoore.jpeg";
 import dghImg from "../../../../public/projects/dgh.jpeg";
 import abcImg from "../../../../public/projects/abc.jpeg";
 
@@ -38,21 +38,21 @@ export default function page() {
               <ProjectCard
                 label="Personal website"
                 description="Portfolio"
-                infoLink="/123"
+                infoLink="/notes/revamp-my-personal-website"
                 demoLink="https://personal-website-hazel-gamma.vercel.app"
                 sourceLink="https://github.com/leonlee603/personal_website"
               />
               <ProjectCard
                 label="Money book"
                 description="Finances tracking app"
-                infoLink="/123"
+                infoLink="/notes/project-money-book"
                 demoLink="https://money-book-delta.vercel.app"
                 sourceLink="https://github.com/leonlee603/money_book"
               />
               <ProjectCard
                 label="Next auth demo"
                 description="Authentication demo with Next.js and Auth.js"
-                infoLink="/123"
+                infoLink="/notes/project-next-auth-demo"
                 demoLink="https://next-auth-demo-six-nu.vercel.app"
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
               />
@@ -62,15 +62,18 @@ export default function page() {
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Websites created from work
             </h2>
-            <div className="mb-5 text-muted-foreground">Here are some of the websites I&apos; made over the years.</div>
+            <div className="mb-5 text-muted-foreground">
+              Here are some of the websites I&apos; made over the years.
+            </div>
             <div className="grid gap-6 pb-12 md:grid-cols-2 lg:grid-cols-4">
               <WorkProjectCard
-                title={"Education Metas"}
-                imageSrc={educationMetasImg}
-                alt={"Education Metas"}
-                link="https://educationmetas.com"
+                title={"Asia Bankers Club"}
+                imageSrc={abcImg}
+                alt={"Asia Bankers Club"}
+                link="https://www.asiabankersclub.com/"
                 description="Corporate website"
               />
+
               <WorkProjectCard
                 title={"Hong Kong Johnson Holding Co., Ltd"}
                 imageSrc={johnsonImg}
@@ -93,17 +96,17 @@ export default function page() {
                 description="Charity website"
               />
               <WorkProjectCard
+                title={"Education Metas"}
+                imageSrc={educationMetasImg}
+                alt={"Education Metas"}
+                link="https://educationmetas.com"
+                description="Corporate website"
+              />
+              <WorkProjectCard
                 title={"STS"}
                 imageSrc={stsImg}
                 alt={"STS"}
                 link="https://sts-certified.com/"
-                description="Corporate website"
-              />
-              <WorkProjectCard
-                title={"Zhen Hua Engineering Co., Ltd"}
-                imageSrc={chechkImg}
-                alt={"Zhen Hua Engineering Co., Ltd"}
-                link="https://www.chechk.com"
                 description="Corporate website"
               />
               <WorkProjectCard
@@ -128,10 +131,10 @@ export default function page() {
                 description="Corporate website"
               />
               <WorkProjectCard
-                title={"Asia Bankers Club"}
-                imageSrc={abcImg}
-                alt={"Asia Bankers Club"}
-                link="https://www.asiabankersclub.com/"
+                title={"Zhen Hua Engineering Co., Ltd"}
+                imageSrc={chechkImg}
+                alt={"Zhen Hua Engineering Co., Ltd"}
+                link="https://www.chechk.com"
                 description="Corporate website"
               />
             </div>

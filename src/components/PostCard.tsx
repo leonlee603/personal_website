@@ -7,7 +7,7 @@ import Link from "next/link";
 import {
   Card,
   CardContent,
-  CardDescription,
+  // CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -32,7 +32,7 @@ export default function PostCard(props: POSTS_QUERYResult[0]) {
         <CardContent className="flex flex-1 flex-col p-4 pb-2">
           <PublishedAt publishedAt={publishedAt} className="mb-2"/>
           <CardTitle className="mb-2 text-lg">{title}</CardTitle>
-          <CardDescription className="flex-1">Card Description</CardDescription>
+          {/* <CardDescription className="flex-1">Card Description</CardDescription> */}
         </CardContent>
         <CardFooter className="flex flex-wrap gap-2 p-4">
           <Categories categories={categories} />

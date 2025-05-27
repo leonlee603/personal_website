@@ -40,7 +40,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
         </div>
       </header>
       <div className="flex flex-col gap-11 md:flex-row">
-        <div>
+        <div className="w-[100%] md:w-[30%]">
           <div className="w-[100%] overflow-hidden rounded-md md:w-auto">
             {mainImage ? (
               <figure className="flex flex-col items-start gap-2 lg:col-span-4">

@@ -31,14 +31,14 @@ export default function ProjectCard({
         <ul className="flex gap-2">
           {infoLink && (
             <li>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="dark:hover:border-foreground">
                 <Link href={infoLink}>Article</Link>
               </Button>
             </li>
           )}
           {demoLink && (
             <li>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="dark:hover:border-foreground">
                 <a href={demoLink} target="_blank">
                   Demo
                 </a>
@@ -47,7 +47,7 @@ export default function ProjectCard({
           )}
           {sourceLink && (
             <li>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="dark:hover:border-foreground">
                 <a href={sourceLink} target="_blank">
                   Source
                 </a>
