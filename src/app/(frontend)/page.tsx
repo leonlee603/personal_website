@@ -104,21 +104,21 @@ export default async function Page() {
               <ProjectCard
                 label="Personal website"
                 description="Portfolio"
-                infoLink="/123"
+                infoLink="/notes/revamp-my-personal-website"
                 demoLink="https://personal-website-hazel-gamma.vercel.app"
                 sourceLink="https://github.com/leonlee603/personal_website"
               />
               <ProjectCard
                 label="Money book"
                 description="Finances tracking app"
-                infoLink="/123"
+                infoLink="/notes/project-money-book"
                 demoLink="https://money-book-delta.vercel.app"
                 sourceLink="https://github.com/leonlee603/money_book"
               />
               <ProjectCard
                 label="Next auth demo"
                 description="Authentication demo with Next.js and Auth.js"
-                infoLink="/123"
+                infoLink="/notes/project-next-auth-demo"
                 demoLink="https://next-auth-demo-six-nu.vercel.app"
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
               />
