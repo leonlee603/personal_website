@@ -19,6 +19,7 @@ import nextIcon from "../../../public/stacks/nextjs.svg";
 import wordpressIcon from "../../../public/stacks/wordpress.svg";
 import teamsIcon from "../../../public/stacks/teams.svg";
 import ProjectCard from "@/components/ProjectCard";
+// import itDogImg from "../../../public/itdog.png";
 
 export const metadata = {
   description: "Developer, a personal website",
@@ -28,20 +29,25 @@ export default async function Page() {
   return (
     <section className="px-8">
       <div className="container mx-auto max-w-1248">
-        <div className="flex flex-col gap-3 py-8 md:py-9 lg:py-12">
-          <Title>Hey there! I&apos;m Leon 🌳</Title>
-          <div className="mb-4 flex items-center gap-2">
-            <FaMapMarkerAlt className="text-primary" />
-            <div className="text-muted-foreground">Hong Kong</div>
-          </div>
-          <div className="text-muted-foreground">
-            <p>
-              I&apos;m a self-taught developer passionate on learning new
-              things, currently working on Next.js.
-            </p>
-            <p>
-              I enjoy weight-lifting, reading books and playing video games.
-            </p>
+        <div className="py-8 md:py-9 lg:py-12">
+          <div className="flex justify-between gap-4">
+            <div className="flex flex-col gap-3 ">
+              <Title>Hey there! I&apos;m Leon 🌳</Title>
+              <div className="mt-1 mb-4 flex items-center gap-2">
+                <FaMapMarkerAlt className="text-primary" />
+                <div className="text-muted-foreground">Hong Kong</div>
+              </div>
+              <div className="text-muted-foreground">
+                <p>
+                  I&apos;m a self-taught developer passionate on learning new
+                  things, currently working on Next.js.
+                </p>
+                <p>
+                  I enjoy weight-lifting, reading books and playing video games.
+                </p>
+              </div>
+            </div>
+            {/* <Image className="hidden md:block" src={itDogImg} width={200} height={200} alt="A dog using a computer" /> */}
           </div>
         </div>
         <Button
