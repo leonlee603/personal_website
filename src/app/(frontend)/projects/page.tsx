@@ -56,6 +56,13 @@ export default function page() {
                 demoLink="https://next-auth-demo-six-nu.vercel.app"
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
               />
+              <ProjectCard
+                label="Vue.js chatroom demo"
+                description="Chatroom demo with Vue.js and Firebase"
+                infoLink="/notes/project-vue-chatroom-demo"
+                demoLink="https://vue-chat-room-b9d99.web.app"
+                sourceLink="https://github.com/leonlee603/chat_room"
+              />
             </div>
           </div>
           <div className="mb-12">
