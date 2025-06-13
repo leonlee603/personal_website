@@ -32,6 +32,8 @@ import figmaIcon from "../../../../public/stacks/figma.avif";
 import jiraIcon from "../../../../public/stacks/jira.svg";
 import teamsIcon from "../../../../public/stacks/teams.svg";
 import vscodeIcon from "../../../../public/stacks/vscode.svg";
+import vueIcon from "../../../../public/stacks/vue.svg";
+import firebaseIcon from "../../../../public/stacks/firebase.svg";
 
 export const metadata = {
   title: "Stacks",
@@ -54,7 +56,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[40px]"
                       src={htmlIcon}
@@ -69,7 +71,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[40px]"
                       src={cssIcon}
@@ -84,7 +86,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={jsIcon}
@@ -99,7 +101,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[40px]"
                       src={reactIcon}
@@ -114,7 +116,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={nextIcon}
@@ -129,7 +131,22 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
+                    <Image
+                      className="w-full max-w-[32px]"
+                      src={vueIcon}
+                      alt="Vue icon"
+                    />
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle>Vue.js</CardTitle>
+                  <CardDescription>Javascript Framework</CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="flex shadow-none dark:bg-muted">
+                <div className="flex min-w-[80px] items-center pl-6">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[40px]"
                       src={gatsbyIcon}
@@ -144,7 +161,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[40px]"
                       src={erbIcon}
@@ -159,7 +176,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image className="w-[32px]" src={phpIcon} alt="PHP icon" />
                   </div>
                 </div>
@@ -170,7 +187,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={wordpressIcon}
@@ -185,7 +202,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={sanityIcon}
@@ -200,7 +217,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={payloadIcon}
@@ -222,7 +239,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={gitIcon}
@@ -237,7 +254,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={forkIcon}
@@ -252,7 +269,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={bitbucketIcon}
@@ -274,7 +291,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={authjsIcon}
@@ -289,7 +306,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={clerkIcon}
@@ -311,7 +328,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={supabaseIcon}
@@ -326,7 +343,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={nenoIcon}
@@ -341,7 +358,22 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
+                    <Image
+                      className="w-[32px]"
+                      src={firebaseIcon}
+                      alt="Firebase icon"
+                    />
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle>Firebase</CardTitle>
+                  <CardDescription>NoSQL Database</CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="flex shadow-none dark:bg-muted">
+                <div className="flex min-w-[80px] items-center pl-6">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={prismaIcon}
@@ -356,7 +388,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={drizzleIcon}
@@ -378,7 +410,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-[32px]"
                       src={figmaIcon}
@@ -400,7 +432,7 @@ export default function page() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={teamsIcon}
@@ -415,7 +447,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={jiraIcon}
@@ -430,7 +462,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={notionIcon}
@@ -445,7 +477,7 @@ export default function page() {
               </Card>
               <Card className="flex shadow-none dark:bg-muted">
                 <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground">
+                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
                     <Image
                       className="w-full max-w-[32px]"
                       src={vscodeIcon}
