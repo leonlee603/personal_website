@@ -36,28 +36,35 @@ export default function page() {
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <ProjectCard
-                label="Personal website"
+                label="Personal Website"
                 description="Portfolio"
                 infoLink="/notes/revamp-my-personal-website"
                 demoLink="https://personal-website-hazel-gamma.vercel.app"
                 sourceLink="https://github.com/leonlee603/personal_website"
               />
               <ProjectCard
-                label="Money book"
+                label="Right Booking Demo"
+                description="A booking website for short-term homestay like airbnb"
+                // infoLink=""
+                demoLink="https://right-booking.vercel.app/"
+                sourceLink="https://github.com/leonlee603/right_booking"
+              />
+              <ProjectCard
+                label="Money Book Demo"
                 description="Finances tracking app"
-                infoLink="/notes/project-money-book"
+                infoLink="/notes/project-money-book-demo"
                 demoLink="https://money-book-delta.vercel.app"
                 sourceLink="https://github.com/leonlee603/money_book"
               />
               <ProjectCard
-                label="Next auth demo"
+                label="Next Auth Demo"
                 description="Authentication demo with Next.js and Auth.js"
                 infoLink="/notes/project-next-auth-demo"
                 demoLink="https://next-auth-demo-six-nu.vercel.app"
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
               />
               <ProjectCard
-                label="Vue.js chatroom demo"
+                label="Vue.js Chatroom Demo"
                 description="Chatroom demo with Vue.js and Firebase"
                 infoLink="/notes/project-vue-chatroom-demo"
                 demoLink="https://vue-chat-room-b9d99.web.app"

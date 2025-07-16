@@ -22,8 +22,8 @@ export default function ProjectCard({
   sourceLink?: string;
 }) {
   return (
-    <Card className="shadow-none dark:bg-muted">
-      <CardHeader>
+    <Card className="flex flex-col shadow-none dark:bg-muted">
+      <CardHeader className="flex-1">
         <CardTitle className="text-lg text-primary">{label}</CardTitle>
         <CardDescription className="pt-2">{description}</CardDescription>
       </CardHeader>

@@ -31,9 +31,9 @@ export default async function Page() {
       <div className="container mx-auto max-w-1248">
         <div className="py-8 md:py-9 lg:py-12">
           <div className="flex justify-between gap-4">
-            <div className="flex flex-col gap-3 ">
-              <Title>Hey there! I&apos;m Leon 🌳</Title>
-              <div className="mt-1 mb-4 flex items-center gap-2">
+            <div className="flex flex-col gap-3">
+              <Title>Hey there! I&apos;m Leon</Title>
+              <div className="mb-4 mt-1 flex items-center gap-2">
                 <FaMapMarkerAlt className="text-primary" />
                 <div className="text-muted-foreground">Hong Kong</div>
               </div>
@@ -108,25 +108,39 @@ export default async function Page() {
           <Suspense>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <ProjectCard
-                label="Personal website"
+                label="Personal Website"
                 description="Portfolio"
                 infoLink="/notes/revamp-my-personal-website"
                 demoLink="https://personal-website-hazel-gamma.vercel.app"
                 sourceLink="https://github.com/leonlee603/personal_website"
               />
               <ProjectCard
-                label="Money book"
+                label="Right Booking Demo"
+                description="A booking website for short-term homestay like airbnb"
+                // infoLink=""
+                demoLink="https://right-booking.vercel.app/"
+                sourceLink="https://github.com/leonlee603/right_booking"
+              />
+              <ProjectCard
+                label="Money Book Demo"
                 description="Finances tracking app"
-                infoLink="/notes/project-money-book"
+                infoLink="/notes/project-money-book-demo"
                 demoLink="https://money-book-delta.vercel.app"
                 sourceLink="https://github.com/leonlee603/money_book"
               />
               <ProjectCard
-                label="Next auth demo"
+                label="Next Auth Demo"
                 description="Authentication demo with Next.js and Auth.js"
                 infoLink="/notes/project-next-auth-demo"
                 demoLink="https://next-auth-demo-six-nu.vercel.app"
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
+              />
+              <ProjectCard
+                label="Vue.js Chatroom Demo"
+                description="Chatroom demo with Vue.js and Firebase"
+                infoLink="/notes/project-vue-chatroom-demo"
+                demoLink="https://vue-chat-room-b9d99.web.app"
+                sourceLink="https://github.com/leonlee603/chat_room"
               />
             </div>
           </Suspense>
