@@ -17,7 +17,7 @@ export default function FrontendLayout({
   return (
     <section className="flex min-h-screen flex-col">
       <Header />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
       <SanityLive />
     </section>
