@@ -134,6 +134,14 @@ export default function page() {
           </div>
           <div className="mb-12">
             <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
+              Certifications
+            </h2>
+            <ul className="flex flex-col gap-2 text-muted-foreground">
+              <li>AWS Certified Cloud Practitioner</li>
+            </ul>
+          </div>
+          <div className="mb-12">
+            <h2 className="mb-4 text-pretty text-xl font-semibold md:text-2xl lg:text-3xl">
               Personality
             </h2>
             <ul className="flex flex-col gap-2 text-muted-foreground">
