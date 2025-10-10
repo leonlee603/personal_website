@@ -141,7 +141,7 @@ export default function page() {
                 title={"Dream Global Holding Limited"}
                 imageSrc={dghImg}
                 alt={"Dream Global Holding Limited"}
-                link="https://dgh.miracledeveloper.com/"
+                link="https://dreamglobalholdings.com"
                 description="Corporate website"
               />
               <WorkProjectCard
