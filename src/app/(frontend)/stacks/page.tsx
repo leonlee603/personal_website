@@ -34,10 +34,319 @@ import teamsIcon from "../../../../public/stacks/teams.svg";
 import vscodeIcon from "../../../../public/stacks/vscode.svg";
 import vueIcon from "../../../../public/stacks/vue.svg";
 import firebaseIcon from "../../../../public/stacks/firebase.svg";
+import { StaticImageData } from "next/image";
+
+const developmentStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-2",
+    size: "w-[40px]",
+    icon: htmlIcon,
+    iconAlt: "HTML icon",
+    title: "HTML",
+    description: "Markup Language",
+  },
+  {
+    padding: "p-2",
+    size: "w-full max-w-[40px]",
+    icon: cssIcon,
+    iconAlt: "CSS icon",
+    title: "CSS",
+    description: "Visual Styling",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: jsIcon,
+    iconAlt: "Javascript icon",
+    title: "Javascript",
+    description: "Programming Language",
+  },
+  {
+    padding: "p-2",
+    size: "w-full max-w-[40px]",
+    icon: reactIcon,
+    iconAlt: "React icon",
+    title: "React",
+    description: "Javascript Library",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: nextIcon,
+    iconAlt: "Next icon",
+    title: "Next.js",
+    description: "React Framework",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: vueIcon,
+    iconAlt: "Vue icon",
+    title: "Vue.js",
+    description: "Javascript Framework",
+  },
+  {
+    padding: "p-2",
+    size: "w-full max-w-[40px]",
+    icon: gatsbyIcon,
+    iconAlt: "Gatsby icon",
+    title: "Gatsby",
+    description: "React Framework",
+  },
+  {
+    padding: "p-2",
+    size: "w-full max-w-[40px]",
+    icon: erbIcon,
+    iconAlt: "Electron React Boilerplate icon",
+    title: "Electron React Boilerplate",
+    description: "React Desktop App",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: phpIcon,
+    iconAlt: "PHP icon",
+    title: "PHP",
+    description: "Programming Language",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: wordpressIcon,
+    iconAlt: "Wordpress icon",
+    title: "Wordpress",
+    description: "Dynamic Development",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: sanityIcon,
+    iconAlt: "Sanity icon",
+    title: "Sanity",
+    description: "Headless CMS",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: payloadIcon,
+    iconAlt: "Payload icon",
+    title: "Payload",
+    description: "Headless CMS",
+  },
+];
+
+const visionControlStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: gitIcon,
+    iconAlt: "Git icon",
+    title: "Git",
+    description: "Version Control",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: forkIcon,
+    iconAlt: "Fork icon",
+    title: "Fork",
+    description: "Git Client",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: bitbucketIcon,
+    iconAlt: "Bitbucket icon",
+    title: "Bitbucket",
+    description: "Version Control System",
+  },
+];
+
+const authenticationStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: authjsIcon,
+    iconAlt: "Auth.js icon",
+    title: "Auth.js",
+    description: "Auth Library",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: clerkIcon,
+    iconAlt: "Clerk icon",
+    title: "Clerk",
+    description: "Auth Library",
+  },
+];
+
+const databaseStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: supabaseIcon,
+    iconAlt: "Supabase icon",
+    title: "Supabase",
+    description: "PostgreSQL Database",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: nenoIcon,
+    iconAlt: "Neon icon",
+    title: "Neon",
+    description: "PostgreSQL Database",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: firebaseIcon,
+    iconAlt: "Firebase icon",
+    title: "Firebase",
+    description: "NoSQL Database",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: prismaIcon,
+    iconAlt: "Prisma icon",
+    title: "Prisma",
+    description: "Database ORM",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: drizzleIcon,
+    iconAlt: "Drizzle icon",
+    title: "Drizzle",
+    description: "Database ORM",
+  },
+];
+
+const designStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: figmaIcon,
+    iconAlt: "Figma icon",
+    title: "Figma",
+    description: "Web Design",
+  },
+];
+
+const productivityStacks: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: teamsIcon,
+    iconAlt: "Teams icon",
+    title: "Teams",
+    description: "Message App",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: jiraIcon,
+    iconAlt: "Jira icon",
+    title: "Jira",
+    description: "Project Management",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: notionIcon,
+    iconAlt: "Notion icon",
+    title: "Notion",
+    description: "Note Taking App",
+  },
+  {
+    padding: "p-3",
+    size: "w-full max-w-[32px]",
+    icon: vscodeIcon,
+    iconAlt: "Visual Studio Code icon",
+    title: "Visual Studio",
+    description: "IDE",
+  },
+];
 
 export const metadata = {
   title: "Stacks",
 };
+
+function StackCard({
+  padding,
+  size,
+  icon,
+  iconAlt,
+  title,
+  description,
+}: {
+  padding: string;
+  size: string;
+  icon: StaticImageData;
+  iconAlt: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <Card className="flex shadow-none dark:bg-muted">
+      <div className="flex min-w-[80px] items-center pl-6">
+        <div
+          className={`h-[56px] w-[56px] rounded-sm bg-secondary ${padding} dark:bg-muted-foreground flex items-center`}
+        >
+          <Image className={size} src={icon} alt={iconAlt} />
+        </div>
+      </div>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+    </Card>
+  );
+}
 
 export default function page() {
   return (
@@ -54,182 +363,18 @@ export default function page() {
               Development
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[40px]"
-                      src={htmlIcon}
-                      alt="HTML icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>HTML</CardTitle>
-                  <CardDescription>Markup Language</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[40px]"
-                      src={cssIcon}
-                      alt="CSS icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>CSS</CardTitle>
-                  <CardDescription>Visual Styling</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={jsIcon}
-                      alt="Javascript icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Javascript</CardTitle>
-                  <CardDescription>Programming Language</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[40px]"
-                      src={reactIcon}
-                      alt="React icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>React</CardTitle>
-                  <CardDescription>Javascript Library</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={nextIcon}
-                      alt="Next icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Next.js</CardTitle>
-                  <CardDescription>React Framework</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={vueIcon}
-                      alt="Vue icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Vue.js</CardTitle>
-                  <CardDescription>Javascript Framework</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[40px]"
-                      src={gatsbyIcon}
-                      alt="Gatsby icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Gatsby</CardTitle>
-                  <CardDescription>React Framework</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-2 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[40px]"
-                      src={erbIcon}
-                      alt="Electron React Boilerplate icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Electron React Boilerplate</CardTitle>
-                  <CardDescription>React Desktop App</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image className="w-[32px]" src={phpIcon} alt="PHP icon" />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>PHP</CardTitle>
-                  <CardDescription>Programming Language</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={wordpressIcon}
-                      alt="Wordpress icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Wordpress</CardTitle>
-                  <CardDescription>Dynamic Development</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={sanityIcon}
-                      alt="Sanity icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Sanity</CardTitle>
-                  <CardDescription>Headless CMS</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={payloadIcon}
-                      alt="Payload icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Payload</CardTitle>
-                  <CardDescription>Headless CMS</CardDescription>
-                </CardHeader>
-              </Card>
+              {developmentStacks.length >= 1 &&
+                developmentStacks.map((developmentStack) => (
+                  <StackCard
+                    key={developmentStack.title}
+                    padding={developmentStack.padding}
+                    size={developmentStack.size}
+                    icon={developmentStack.icon}
+                    iconAlt={developmentStack.iconAlt}
+                    title={developmentStack.title}
+                    description={developmentStack.description}
+                  />
+                ))}
             </div>
           </div>
           <div className="mb-12">
@@ -237,51 +382,18 @@ export default function page() {
               Version Control
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={gitIcon}
-                      alt="Git icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Git</CardTitle>
-                  <CardDescription>Version Control</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={forkIcon}
-                      alt="Fork icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Fork</CardTitle>
-                  <CardDescription>Git Client</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={bitbucketIcon}
-                      alt="Bitbucket icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Bitbucket</CardTitle>
-                  <CardDescription>Version Control System</CardDescription>
-                </CardHeader>
-              </Card>
+              {visionControlStacks.length >= 1 &&
+                visionControlStacks.map((visionControlStack) => (
+                  <StackCard
+                    key={visionControlStack.title}
+                    padding={visionControlStack.padding}
+                    size={visionControlStack.size}
+                    icon={visionControlStack.icon}
+                    iconAlt={visionControlStack.iconAlt}
+                    title={visionControlStack.title}
+                    description={visionControlStack.description}
+                  />
+                ))}
             </div>
           </div>
           <div className="mb-12">
@@ -289,36 +401,18 @@ export default function page() {
               Authentication
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={authjsIcon}
-                      alt="Auth.js icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Auth.js</CardTitle>
-                  <CardDescription>Auth Library</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={clerkIcon}
-                      alt="Clerk icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Clerk</CardTitle>
-                  <CardDescription>Auth Library</CardDescription>
-                </CardHeader>
-              </Card>
+              {authenticationStacks.length >= 1 &&
+                authenticationStacks.map((authenticationStack) => (
+                  <StackCard
+                    key={authenticationStack.title}
+                    padding={authenticationStack.padding}
+                    size={authenticationStack.size}
+                    icon={authenticationStack.icon}
+                    iconAlt={authenticationStack.iconAlt}
+                    title={authenticationStack.title}
+                    description={authenticationStack.description}
+                  />
+                ))}
             </div>
           </div>
           <div className="mb-12">
@@ -326,81 +420,18 @@ export default function page() {
               Database
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={supabaseIcon}
-                      alt="Supabase icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Supabase</CardTitle>
-                  <CardDescription>PostgreSQL Database</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={nenoIcon}
-                      alt="Neon icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Neon</CardTitle>
-                  <CardDescription>PostgreSQL Database</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={firebaseIcon}
-                      alt="Firebase icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Firebase</CardTitle>
-                  <CardDescription>NoSQL Database</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={prismaIcon}
-                      alt="Prisma icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Prisma</CardTitle>
-                  <CardDescription>Database ORM</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={drizzleIcon}
-                      alt="Drizzle icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Drizzle</CardTitle>
-                  <CardDescription>Database ORM</CardDescription>
-                </CardHeader>
-              </Card>
+              {databaseStacks.length >= 1 &&
+                databaseStacks.map((databaseStack) => (
+                  <StackCard
+                    key={databaseStack.title}
+                    padding={databaseStack.padding}
+                    size={databaseStack.size}
+                    icon={databaseStack.icon}
+                    iconAlt={databaseStack.iconAlt}
+                    title={databaseStack.title}
+                    description={databaseStack.description}
+                  />
+                ))}
             </div>
           </div>
           <div className="mb-12">
@@ -408,21 +439,18 @@ export default function page() {
               Design
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-[32px]"
-                      src={figmaIcon}
-                      alt="Figma icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Figma</CardTitle>
-                  <CardDescription>Web Design</CardDescription>
-                </CardHeader>
-              </Card>
+              {designStacks.length >= 1 &&
+                designStacks.map((designStack) => (
+                  <StackCard
+                    key={designStack.title}
+                    padding={designStack.padding}
+                    size={designStack.size}
+                    icon={designStack.icon}
+                    iconAlt={designStack.iconAlt}
+                    title={designStack.title}
+                    description={designStack.description}
+                  />
+                ))}
             </div>
           </div>
           <div className="mb-12">
@@ -430,66 +458,18 @@ export default function page() {
               Productivity
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={teamsIcon}
-                      alt="Teams icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Teams</CardTitle>
-                  <CardDescription>Message App</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={jiraIcon}
-                      alt="Jira icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Jira</CardTitle>
-                  <CardDescription>Project Management</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={notionIcon}
-                      alt="Notion icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Notion</CardTitle>
-                  <CardDescription>Note Taking App</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="flex shadow-none dark:bg-muted">
-                <div className="flex min-w-[80px] items-center pl-6">
-                  <div className="h-[56px] w-[56px] rounded-sm bg-secondary p-3 dark:bg-muted-foreground flex items-center">
-                    <Image
-                      className="w-full max-w-[32px]"
-                      src={vscodeIcon}
-                      alt="Visual Studio Code icon"
-                    />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle>Visual Studio</CardTitle>
-                  <CardDescription>IDE</CardDescription>
-                </CardHeader>
-              </Card>
+              {productivityStacks.length >= 1 &&
+                productivityStacks.map((productivityStack) => (
+                  <StackCard
+                    key={productivityStack.title}
+                    padding={productivityStack.padding}
+                    size={productivityStack.size}
+                    icon={productivityStack.icon}
+                    iconAlt={productivityStack.iconAlt}
+                    title={productivityStack.title}
+                    description={productivityStack.description}
+                  />
+                ))}
             </div>
           </div>
         </div>
