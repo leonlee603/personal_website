@@ -39,7 +39,7 @@ export default async function Page() {
               </div>
               <div className="text-muted-foreground">
                 <p>
-                  I&apos;m a self-taught developer passionate on learning new
+                  I&apos;m a web developer passionate on learning new
                   things, currently working on Next.js.
                 </p>
                 <p>
