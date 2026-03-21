@@ -47,6 +47,11 @@ export const projects: ProjectCardProps[] = [
     demoLink: "https://next-auth-demo-six-nu.vercel.app",
     sourceLink: "https://github.com/leonlee603/next-auth-demo",
   },
+  {
+    label: "Nest Api Demo",
+    description: "Nest.js API demo with TypeORM and PostgreSQL",
+    sourceLink: "https://github.com/leonlee603/nest-api",
+  },
   // {
   //   label: "Vue.js Chatroom Demo",
   //   description: "Chatroom demo with Vue.js and Firebase",
