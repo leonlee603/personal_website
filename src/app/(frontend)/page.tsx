@@ -39,8 +39,8 @@ export default async function Page() {
               </div>
               <div className="text-muted-foreground">
                 <p>
-                  I&apos;m a web developer passionate on learning new
-                  things, currently working on Next.js.
+                  I&apos;m a web developer passionate on learning new things,
+                  currently working on Next.js.
                 </p>
                 <p>
                   I enjoy weight-lifting, reading books and playing video games.
@@ -136,11 +136,9 @@ export default async function Page() {
                 sourceLink="https://github.com/leonlee603/next-auth-demo"
               />
               <ProjectCard
-                label="Vue.js Chatroom Demo"
-                description="Chatroom demo with Vue.js and Firebase"
-                infoLink="/notes/project-vue-chatroom-demo"
-                demoLink="https://vue-chat-room-b9d99.web.app"
-                sourceLink="https://github.com/leonlee603/chat_room"
+                label="Nest Api Demo"
+                description="Nest.js API demo with TypeORM and PostgreSQL"
+                sourceLink="https://github.com/leonlee603/nest-api"
               />
             </div>
           </Suspense>
