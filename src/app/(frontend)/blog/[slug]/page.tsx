@@ -6,13 +6,14 @@ import { POST_QUERY, POSTS_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { Post } from "@/components/Post";
 
 export async function generateMetadata({params} : {params: Promise<{ slug: string }>}):Promise<Metadata> {
+  const { slug } = await params;
   const { data: post } = await sanityFetch({
     query: POST_QUERY,
-    params: await params,
+    params: { slug: slug },
   });
 
   return {
-    title: post!.title
+    title: post?.title || slug
   }
 }
 
