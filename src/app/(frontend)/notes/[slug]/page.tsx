@@ -6,13 +6,14 @@ import { NOTE_QUERY, NOTES_SLUGS_QUERY } from "@/sanity/lib/queries";
 import { Note } from "@/components/Note";
 
 export async function generateMetadata({params} : {params: Promise<{ slug: string }>}):Promise<Metadata> {
+  const { slug } = await params;
   const { data: post } = await sanityFetch({
     query: NOTE_QUERY,
-    params: await params,
+    params: { slug: slug },
   });
 
   return {
-    title: post!.title
+    title: post?.title || slug
   }
 }
 
