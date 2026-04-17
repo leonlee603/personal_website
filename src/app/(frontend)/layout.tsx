@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
+import Template from "@/app/(frontend)/template";
 
 export const metadata = {
   title: {
@@ -17,8 +18,10 @@ export default function FrontendLayout({
   return (
     <section className="flex min-h-screen flex-col">
       <Header />
+      <Template>
       <div className="flex-1 flex flex-col">{children}</div>
       <Footer />
+      </Template>
       <SanityLive />
     </section>
   );
