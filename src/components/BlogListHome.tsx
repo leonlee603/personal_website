@@ -42,7 +42,7 @@ export default async function BlogListHome({
               className=""
               href={`/blog/${post.slug!.current}`}
             >
-              <div className="flex flex-col justify-between gap-2 overflow-hidden border-b-2 border-dotted py-3 md:gap-4 md:py-4 lg:flex-row lg:gap-6 lg:py-5">
+              <div className="flex flex-col justify-between gap-2 overflow-hidden border-b-2 border-dotted py-3 md:gap-4 md:py-4 lg:flex-row lg:gap-6 lg:py-5 hover:text-primary transition-colors">
                 <div className="max-w-70 text-base font-semibold leading-none tracking-tight md:text-lg">
                   {title}
                 </div>
