@@ -8,6 +8,9 @@ import nextIcon from "../../public/stacks/nextjs.svg";
 import vueIcon from "../../public/stacks/vue.svg";
 import gatsbyIcon from "../../public/stacks/gatsby.svg";
 import erbIcon from "../../public/stacks/erb.png";
+import nodeIcon from "../../public/stacks/nodejs.png";
+import expressIcon from "../../public/stacks/expressjs.png";
+import nestIcon from "../../public/stacks/nestjs.png";
 import phpIcon from "../../public/stacks/php.svg";
 import wordpressIcon from "../../public/stacks/wordpress.svg";
 import sanityIcon from "../../public/stacks/sanity.svg";
@@ -25,6 +28,7 @@ import nenoIcon from "../../public/stacks/neon.svg";
 import firebaseIcon from "../../public/stacks/firebase.svg";
 import prismaIcon from "../../public/stacks/prisma.svg";
 import drizzleIcon from "../../public/stacks/drizzle.webp";
+import typeormIcon from "../../public/stacks/typeorm.svg";
 
 import figmaIcon from "../../public/stacks/figma.avif";
 
@@ -106,6 +110,30 @@ export const developmentStacks: StackCardProps[] = [
     iconAlt: "Electron React Boilerplate icon",
     title: "Electron React Boilerplate",
     description: "React Desktop App",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: nodeIcon,
+    iconAlt: "Node.js icon",
+    title: "Node.js",
+    description: "JavaScript Runtime Environment",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: expressIcon,
+    iconAlt: "Express.js icon",
+    title: "Express.js",
+    description: "Node.js Framework",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: nestIcon,
+    iconAlt: "Nest.js icon",
+    title: "Nest.js",
+    description: "Node.js Framework",
   },
   {
     padding: "p-3",
@@ -226,6 +254,14 @@ export const databaseStacks: StackCardProps[] = [
     icon: drizzleIcon,
     iconAlt: "Drizzle icon",
     title: "Drizzle",
+    description: "Database ORM",
+  },
+  {
+    padding: "p-3",
+    size: "w-[32px]",
+    icon: typeormIcon,
+    iconAlt: "TypeORM icon",
+    title: "TypeORM",
     description: "Database ORM",
   },
 ];

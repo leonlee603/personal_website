@@ -124,11 +124,11 @@ export default function page() {
               Skills
             </h2>
             <ul className="flex flex-col gap-2 text-muted-foreground">
-              <li>Languages : Javascript, Typescript, PHP, HTML, CSS</li>
-              <li>Frameworks : Next.js, Gatsby</li>
+              <li>Languages : Javascript, Typescript, Node.js, PHP, HTML, CSS</li>
+              <li>Frameworks : Next.js, Gatsby, Express.js, Nest.js</li>
               <li>Libraries : React, Auth.js, Clerk, TailwindCSS, Bootstrap</li>
               <li>CMS : Wordpress, Sanity, Payload</li>
-              <li>Database : Supabase, Neon, Prisma, Drizzle</li>
+              <li>Database : Supabase, Neon, Prisma, Drizzle, TypeORM</li>
               <li>Version Control System : Git, Bitbucket, GitHub</li>
             </ul>
           </div>
