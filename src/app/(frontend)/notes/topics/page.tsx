@@ -18,14 +18,13 @@ export default async function page() {
       <div className="container mx-auto max-w-1248">
         <PostPageHeader>
           <Title>Notes</Title>
-          <div>All topics list</div>
+          <div>All the topics I&apos;ve covered.</div>
         </PostPageHeader>
 
-        <div>List will be here</div>
         {Object.entries(groupedTopicItems).map(([key, value]) => {
           return (
             <div key={key} className="alphabetical-tags">
-              <h3>{key.toUpperCase()}</h3>
+              <h3 className="mb-2">{key.toUpperCase()}</h3>
               <div className="flex flex-row flex-wrap gap-1 pb-2">
                 {value.map((topic) => {
                   return (

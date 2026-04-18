@@ -65,7 +65,7 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Blog
             </h2>
-            <Link className="text-primary" href="/blog">
+            <Link className="text-primary underline-offset-4 underline" href="/blog">
               See all
             </Link>
           </div>
@@ -82,7 +82,7 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Notes
             </h2>
-            <Link className="text-primary" href="/notes">
+            <Link className="text-primary underline-offset-4 underline" href="/notes">
               See all
             </Link>
           </div>
@@ -98,7 +98,7 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Projects
             </h2>
-            <Link className="text-primary" href="/projects">
+            <Link className="text-primary underline-offset-4 underline" href="/projects">
               See all
             </Link>
           </div>
@@ -148,7 +148,7 @@ export default async function Page() {
             <h2 className="text-pretty text-xl font-semibold md:text-2xl lg:text-4xl">
               Stacks
             </h2>
-            <Link className="text-primary" href="/stacks">
+            <Link className="text-primary underline-offset-4 underline" href="/stacks">
               See all
             </Link>
           </div>
