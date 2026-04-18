@@ -27,6 +27,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="flex-1 flex flex-col"
     >
       <FrozenRouter>{children}</FrozenRouter>
     </motion.div>
