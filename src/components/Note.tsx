@@ -65,7 +65,7 @@ export function Note(props: NonNullable<NOTE_QUERYResult>) {
           className="prose flex flex-row text-foreground lg:prose-lg"
           style={{ maxWidth: "unset" }}
         >
-          <div className="potable-text-container w-[100%] md:w-[70%]">
+          <div className="potable-text-container w-[100%] md:w-[70%] pb-32">
             <PortableText value={body} components={components} />
           </div>
           <div className="hidden md:block md:w-[30%]">
