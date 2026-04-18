@@ -17,8 +17,8 @@ export default function Me() {
         <div className="mb-10 mt-6 md:mb-20 md:mt-9 lg:mb-24 lg:mt-12">
           <div className="mb-12">
             <p className="mb-3 text-muted-foreground">
-              Hey, I&apos;m Leon! I&apos;m a web developer, who graduated
-              from The Hong Kong University of Science and Technology (HKUST)
+              Hey, I&apos;m Leon! I&apos;m a web developer, who graduated from
+              The Hong Kong University of Science and Technology (HKUST)
               majoring in Physics. During my study, I have developed a better
               understanding of abstract theories that involve logical thinking.
               Having good problem solving skills makes me immediately hooked
@@ -30,7 +30,7 @@ export default function Me() {
               If you want to know more about why did I start programming, please
               check out the blog post{" "}
               <Link
-                className="text-primary"
+                className="text-primary underline-offset-4 underline"
                 href="/blog/why-did-i-start-programming"
               >
                 here!
@@ -47,7 +47,7 @@ export default function Me() {
             <ul className="flex flex-col gap-2 text-primary">
               <li>
                 <a
-                  className="inline-block"
+                  className="inline-block underline-offset-4 underline"
                   href="https://www.instagram.com/418_tea_pot"
                   target="_blank"
                 >
@@ -56,6 +56,7 @@ export default function Me() {
               </li>
               <li>
                 <a
+                  className="inline-block underline-offset-4 underline"
                   href="https://www.linkedin.com/in/leonlee603"
                   target="_blank"
                 >
@@ -63,7 +64,11 @@ export default function Me() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/leonlee603" target="_blank">
+                <a
+                  className="inline-block underline-offset-4 underline"
+                  href="https://github.com/leonlee603"
+                  target="_blank"
+                >
                   GitHub
                 </a>
               </li>
@@ -86,7 +91,7 @@ export default function Me() {
             </h2>
             <ul className="flex flex-col gap-2 text-primary">
               <li>
-                <Link href="/resume">My resume</Link>
+                <Link href="/resume" className="underline-offset-4 underline">My resume</Link>
               </li>
             </ul>
           </div>

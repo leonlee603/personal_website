@@ -19,14 +19,14 @@ export default function page() {
             <ul className="flex flex-col gap-2 text-muted-foreground">
               <li>
                 Email:&nbsp;
-                <a className="text-primary" href="mailto:" target="_blank">
+                <a className="text-primary underline-offset-4 underline" href="mailto:" target="_blank">
                   leonleepingho@gmail.com
                 </a>
               </li>
               <li>
                 LinkedIn:&nbsp;
                 <a
-                  className="text-primary"
+                  className="text-primary underline-offset-4 underline"
                   href="https://www.linkedin.com/in/leonlee603"
                   target="_blank"
                 >
@@ -36,7 +36,7 @@ export default function page() {
               <li>
                 GitHub:&nbsp;
                 <a
-                  className="text-primary"
+                  className="text-primary underline-offset-4 underline"
                   href="https://github.com/leonlee603"
                   target="_blank"
                 >
@@ -96,7 +96,7 @@ export default function page() {
             <p className="text-muted-foreground">
               Wonder why I switch career from merchandiser to web developer? Check out {" "}
               <Link
-                className="text-primary"
+                className="text-primary underline-offset-4 underline"
                 href="/blog/from-merchandiser-to-web-developer"
               >
                 here!
