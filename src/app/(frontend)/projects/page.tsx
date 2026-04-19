@@ -7,6 +7,7 @@ import { projects, workProjects } from "@/lib/projectsData";
 
 export const metadata = {
   title: "Projects",
+  description: "My projects, both personal and work-related. Including GitHub projects and websites created from work.",
 };
 
 export default function page() {

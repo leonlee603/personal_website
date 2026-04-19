@@ -4,6 +4,7 @@ import Title from "@/components/Title";
 
 export const metadata = {
   title: "Resume",
+  description: "My resume, including my experience, education, skills, certifications, and personality.",
 };
 
 export default function page() {

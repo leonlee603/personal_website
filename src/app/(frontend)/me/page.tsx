@@ -4,6 +4,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "About",
+  description: "About me, my contact information, my resume, and my hobbies.",
 };
 
 export default function Me() {
