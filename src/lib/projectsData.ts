@@ -6,7 +6,8 @@ import tcgImg from "../../public/projects/tcg.jpeg";
 import oxfamImg from "../../public/projects/oxfam.jpeg";
 import educationMetasImg from "../../public/projects/education_metas.jpeg";
 import stsImg from "../../public/projects/sts.jpeg";
-import cscehkImg from "../../public/projects/cscechk.jpeg";
+// import cscehkImg from "../../public/projects/cscechk.jpeg";
+import vvnImg from "../../public/projects/vvn.webp";
 import grandMooreImg from "../../public/projects/grandMoore.jpeg";
 import dghImg from "../../public/projects/dgh.jpeg";
 import chechkImg from "../../public/projects/chechk.jpeg";
@@ -112,12 +113,19 @@ export const workProjects: WorkProjectCardProps[] = [
     link: "https://sts-certified.com",
     description: "Corporate website",
   },
+  // {
+  //   title: "China State Construction Engineering Limited",
+  //   imageSrc: cscehkImg,
+  //   alt: "China State Construction Engineering Limited",
+  //   link: "https://esg.cscechk.com/2023/chi",
+  //   description: "Single page for report",
+  // },
   {
-    title: "China State Construction Engineering Limited",
-    imageSrc: cscehkImg,
-    alt: "China State Construction Engineering Limited",
-    link: "https://esg.cscechk.com/2023/chi",
-    description: "Single page for report",
+    title: "UI/UX Designer",
+    imageSrc: vvnImg,
+    alt: "UI/UX Designer - VVN",
+    link: "https://vivian-ywt-web.vercel.app/",
+    description: "Portfolio website",
   },
   {
     title: "Grand Moore Capital Limited",
