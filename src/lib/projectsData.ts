@@ -124,7 +124,7 @@ export const workProjects: WorkProjectCardProps[] = [
     title: "UI/UX Designer",
     imageSrc: vvnImg,
     alt: "UI/UX Designer - VVN",
-    link: "https://vivian-ywt-web.vercel.app/",
+    link: "https://portfolio-demo-web-six.vercel.app/",
     description: "Portfolio website",
   },
   {
